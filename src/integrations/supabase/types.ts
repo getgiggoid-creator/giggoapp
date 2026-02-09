@@ -265,6 +265,7 @@ export type Database = {
           social_connections: Json | null
           updated_at: string
           user_id: string
+          verification_status: string
         }
         Insert: {
           categories?: string[] | null
@@ -275,6 +276,7 @@ export type Database = {
           social_connections?: Json | null
           updated_at?: string
           user_id: string
+          verification_status?: string
         }
         Update: {
           categories?: string[] | null
@@ -285,6 +287,7 @@ export type Database = {
           social_connections?: Json | null
           updated_at?: string
           user_id?: string
+          verification_status?: string
         }
         Relationships: []
       }

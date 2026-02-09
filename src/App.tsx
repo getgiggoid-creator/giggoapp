@@ -34,6 +34,10 @@ const Welcome = lazy(() => import("@/pages/onboarding/Welcome"));
 const Privacy = lazy(() => import("@/pages/legal/Privacy"));
 const Terms = lazy(() => import("@/pages/legal/Terms"));
 const PublicCreatorProfile = lazy(() => import("@/pages/creators/PublicProfile"));
+const AdminCreatorManagement = lazy(() => import("@/pages/admin/CreatorManagement"));
+
+// Guards
+import AdminGuard from "@/components/admin/AdminGuard";
 
 // Loading Fallback Component
 const LoadingFallback = () => (
@@ -103,6 +107,11 @@ const App = () => (
                   <Route element={<ProtectedRoute allowedRoles={['creator']} />}>
                     <Route path="/dashboard/creator" element={<CreatorDashboard />} />
                     <Route path="/dashboard/creator/wallet" element={<CreatorWallet />} />
+                  </Route>
+
+                  {/* Admin Routes */}
+                  <Route element={<AdminGuard />}>
+                    <Route path="/admin/creators" element={<AdminCreatorManagement />} />
                   </Route>
 
                   {/* 404 */}

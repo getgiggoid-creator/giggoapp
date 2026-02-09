@@ -17,6 +17,7 @@ export interface PublicCreatorProfile {
   social_connections: Record<string, unknown> | null;
   portfolio_items: PortfolioItem[];
   is_public: boolean;
+  verification_status: string;
 }
 
 async function fetchCreatorByUsername(
@@ -35,7 +36,7 @@ async function fetchCreatorByUsername(
   // Then fetch the creator profile
   const { data: creator, error: creatorError } = await supabase
     .from("creator_profiles")
-    .select("categories, social_connections, portfolio_items, is_public")
+    .select("categories, social_connections, portfolio_items, is_public, verification_status")
     .eq("user_id", profile.user_id)
     .eq("is_public", true)
     .maybeSingle();
@@ -56,6 +57,7 @@ async function fetchCreatorByUsername(
     social_connections: creator.social_connections as Record<string, unknown> | null,
     portfolio_items: portfolioItems,
     is_public: creator.is_public,
+    verification_status: (creator as Record<string, unknown>).verification_status as string ?? "pending",
   };
 }
 
