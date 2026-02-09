@@ -1,25 +1,39 @@
-import HeroCyberpunk from "@/components/landing/HeroCyberpunk";
-import LivePayoutsTicker from "@/components/landing/LivePayoutsTicker";
-import TrustBanner from "@/components/landing/TrustBanner";
-import Features from "@/components/landing/Features";
-import CreatorHub from "@/components/landing/CreatorHub";
-import VideoShowcase from "@/components/landing/VideoShowcase";
-import HowItWorks from "@/components/landing/HowItWorks";
-import FAQ from "@/components/landing/FAQ";
-import CTA from "@/components/landing/CTA";
+import GiggoNav from "@/components/landing/GiggoNav";
+import GiggoHero from "@/components/landing/GiggoHero";
+import TrustStats from "@/components/landing/TrustStats";
+import ProblemSolution from "@/components/landing/ProblemSolution";
+import GiggoHowItWorks from "@/components/landing/GiggoHowItWorks";
+import GiggoPricing from "@/components/landing/GiggoPricing";
+import GiggoPortfolio from "@/components/landing/GiggoPortfolio";
+import GiggoTestimonials from "@/components/landing/GiggoTestimonials";
+import GiggoFAQ from "@/components/landing/GiggoFAQ";
+import GiggoCTA from "@/components/landing/GiggoCTA";
+import GiggoFooter from "@/components/landing/GiggoFooter";
+import WhatsAppWidget from "@/components/landing/WhatsAppWidget";
 
 const Index = () => {
   return (
-    <main className="flex-grow">
-      <HeroCyberpunk />
-      <LivePayoutsTicker />
-      <TrustBanner />
-      <Features />
-      <CreatorHub />
-      <VideoShowcase />
-      <HowItWorks />
-      <FAQ />
-      <CTA />
+    <main className="bg-white">
+      <GiggoNav />
+      <GiggoHero />
+      <TrustStats />
+      <ProblemSolution />
+      <div id="how-it-works">
+        <GiggoHowItWorks />
+      </div>
+      <div id="pricing">
+        <GiggoPricing />
+      </div>
+      <div id="portfolio">
+        <GiggoPortfolio />
+      </div>
+      <GiggoTestimonials />
+      <div id="faq">
+        <GiggoFAQ />
+      </div>
+      <GiggoCTA />
+      <GiggoFooter />
+      <WhatsAppWidget />
     </main>
   );
 };
