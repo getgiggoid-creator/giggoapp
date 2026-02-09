@@ -56,10 +56,12 @@ const CreatorProfileHeader = ({ creator }: Props) => {
             {initials}
           </AvatarFallback>
         </Avatar>
-        {/* Verified badge */}
-        <div className="absolute -bottom-1 -right-1 bg-card rounded-full p-0.5 shadow-md">
-          <CheckCircle2 className="w-7 h-7 text-[hsl(210,100%,56%)] fill-[hsl(210,100%,56%)]" />
-        </div>
+        {/* Verified badge - only show if verified */}
+        {creator.verification_status === "verified" && (
+          <div className="absolute -bottom-1 -right-1 bg-card rounded-full p-0.5 shadow-md">
+            <CheckCircle2 className="w-7 h-7 text-[hsl(210,100%,56%)] fill-[hsl(210,100%,56%)]" />
+          </div>
+        )}
       </div>
 
       {/* Name & Handle */}
