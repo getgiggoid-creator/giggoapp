@@ -71,9 +71,11 @@ const App = () => (
             <RoleProvider>
               <Suspense fallback={<LoadingFallback />}>
                 <Routes>
-                  {/* Public Routes (with Navbar & Footer) */}
+                  {/* Landing page (own nav/footer) */}
+                  <Route path="/" element={<Index />} />
+
+                  {/* Public Routes (with shared Navbar & Footer) */}
                   <Route element={<IndexLayout />}>
-                    <Route path="/" element={<Index />} />
                     <Route path="/brands" element={<BrandsLandingPage />} />
                     <Route path="/creators" element={<CreatorsLandingPage />} />
                     <Route path="/campaigns" element={<BrowseCampaigns />} />
