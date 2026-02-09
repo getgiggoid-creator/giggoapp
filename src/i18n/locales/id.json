@@ -1,0 +1,723 @@
+{
+  "common": {
+    "login": "Masuk",
+    "signup": "Daftar",
+    "getStarted": "Mulai Sekarang",
+    "learnMore": "Pelajari Lebih Lanjut",
+    "submit": "Kirim",
+    "cancel": "Batal",
+    "save": "Simpan",
+    "back": "Kembali",
+    "next": "Selanjutnya",
+    "continue": "Lanjutkan",
+    "search": "Cari",
+    "loading": "Memuat...",
+    "error": "Kesalahan",
+    "success": "Berhasil",
+    "followers": "Pengikut",
+    "views": "Dilihat",
+    "payout": "Hadiah",
+    "open": "Buka",
+    "closed": "Tutup",
+    "draft": "Draf",
+    "live": "Aktif",
+    "contest": "Kontes",
+    "deal": "Kolaborasi",
+    "challenge": "Tantangan",
+    "collab": "Kolaborasi"
+  },
+  "nav": {
+    "home": "Beranda",
+    "gigs": "Gig",
+    "forCreators": "Untuk Kreator",
+    "forBrands": "Untuk Brand",
+    "pricing": "Harga",
+    "browseCampaigns": "Jelajahi Gig"
+  },
+  "hero": {
+    "badge": "Tempat Kreator Mendapatkan Gig",
+    "headline": "Buat.",
+    "headlineHighlight": "Dapat Bayaran.",
+    "headlineEnd": "Ulangi.",
+    "subheadline": "Giggo menghubungkan kreator dengan brand untuk gig berbayar. Jelajahi tantangan, kirim konten terbaikmu, dan dapatkan uang dari hobi kamu.",
+    "ctaBrand": "Saya Brand",
+    "ctaCreator": "Saya Kreator",
+    "statsCreators": "Kreator Aktif",
+    "statsBrands": "Partner Brand",
+    "statsPaid": "Dibayarkan ke Kreator",
+    "nikeChallenge": "Tantangan Nike",
+    "nikeAmount": "Hadiah $5,000",
+    "fashion": "Fashion",
+    "lifestyle": "Gaya Hidup",
+    "topCreator": "Kreator Top",
+    "creatorHubPreview": "Pratinjau Hub Kreator",
+    "creators": {
+      "badge": "Marketplace #1 untuk Kreator Terverifikasi",
+      "headline1": "Buat. Dapat Bayaran.",
+      "headline2": "Ulangi.",
+      "subheadline": "Giggo menghubungkan kreator dengan brand yang mencari UGC autentik. Lamar gig, buat konten, dan dapatkan bayaran dengan aman.",
+      "cta": "Mulai Cuan",
+      "secondaryCta": "Jelajahi Gig",
+      "stat1": "Brand Terverifikasi",
+      "stat2": "Escrow Aman",
+      "stat3": "10rb+ Kreator"
+    },
+    "brands": {
+      "badge": "Dipercaya oleh 850+ Brand Terkemuka",
+      "headline1": "Scale UGC Anda.",
+      "headline2": "Seketika.",
+      "subheadline": "Akses kreator yang sudah dikurasi dan siap membuat konten berkonversi tinggi. Luncurkan kampanye dalam hitungan menit.",
+      "cta": "Mulai Rekrut",
+      "secondaryCta": "Lihat Kreator",
+      "stat1": "Kreator Terkurasi",
+      "stat2": "Hak Penggunaan Penuh",
+      "stat3": "Pengiriman 7 Hari"
+    }
+  },
+  "features": {
+    "title": "Semua yang Kamu Butuhkan untuk",
+    "titleHighlight": "Sukses",
+    "subtitle": "Alat canggih untuk brand meluncurkan gig dan kreator memonetisasi konten mereka.",
+    "launchGigs": {
+      "title": "Luncurkan Gig",
+      "description": "Buat tantangan dan kolaborasi brand yang menarik kreator konten terbaik."
+    },
+    "collectEntries": {
+      "title": "Kumpulkan Entri",
+      "description": "Terima entri video berkualitas tinggi yang selaras dengan visi brand kamu."
+    },
+    "challengeSystem": {
+      "title": "Sistem Tantangan",
+      "description": "Jalankan tantangan menarik dengan papan peringkat dan tingkat hadiah."
+    },
+    "easyPayouts": {
+      "title": "Pembayaran Mudah",
+      "description": "Proses pembayaran aman untuk hadiah kreator dan kolaborasi."
+    },
+    "analyticsHub": {
+      "title": "Hub Analitik",
+      "description": "Lacak performa gig dan engagement kreator secara real-time."
+    },
+    "verifiedProfiles": {
+      "title": "Profil Terverifikasi",
+      "description": "Brand dan kreator terverifikasi untuk kemitraan terpercaya."
+    }
+  },
+  "howItWorks": {
+    "title": "Cara",
+    "titleHighlight": "Kerjanya",
+    "subtitle": "Proses sederhana untuk brand dan kreator berkolaborasi di Giggo.",
+    "forBrands": "Untuk Brand",
+    "forCreators": "Untuk Kreator",
+    "brand": {
+      "step1": {
+        "title": "Buat Gig",
+        "description": "Siapkan tantangan atau kolaborasi dengan hadiah, brief gig, dan persyaratan."
+      },
+      "step2": {
+        "title": "Terima Entri",
+        "description": "Kreator mengirimkan entri video mereka berdasarkan brief gig kamu."
+      },
+      "step3": {
+        "title": "Pilih Pemenang",
+        "description": "Tinjau, nilai, dan pilih konten terbaik untuk brand kamu."
+      },
+      "step4": {
+        "title": "Bayar & Luncurkan",
+        "description": "Distribusikan hadiah dan gunakan konten di seluruh channel kamu."
+      }
+    },
+    "creator": {
+      "step1": {
+        "title": "Jelajahi Gig",
+        "description": "Temukan peluang brand yang sesuai dengan niche dan gaya kamu."
+      },
+      "step2": {
+        "title": "Kirim Entri",
+        "description": "Buat dan unggah video kamu mengikuti brief gig."
+      },
+      "step3": {
+        "title": "Dapatkan Poin",
+        "description": "Dinilai berdasarkan views, engagement, dan kreativitas."
+      },
+      "step4": {
+        "title": "Dapat Bayaran",
+        "description": "Terima hadiah saat kamu menang tantangan atau menyelesaikan kolaborasi."
+      }
+    }
+  },
+  "videoShowcase": {
+    "title": "Sorotan",
+    "titleHighlight": "Kreator",
+    "subtitle": "Lihat apa yang kreator buat di Giggo",
+    "watchVideo": "Tonton Video",
+    "categories": {
+      "all": "Semua",
+      "fashion": "Fashion",
+      "beauty": "Kecantikan",
+      "tech": "Teknologi",
+      "food": "Makanan",
+      "lifestyle": "Gaya Hidup",
+      "fitness": "Kebugaran"
+    }
+  },
+  "cta": {
+    "badge": "Bergabung dengan 10.000+ Kreator & 500+ Brand",
+    "title": "Siap Mendapatkan Gig Selanjutnya?",
+    "subtitle": "Baik kamu brand yang ingin meluncurkan tantangan viral atau kreator yang siap dibayar untuk kontenmu, Giggo siap membantu.",
+    "primary": "Mulai Gratis",
+    "secondary": "Jelajahi Gig"
+  },
+  "faq": {
+    "title": "Pertanyaan yang",
+    "titleHighlight": "Sering Ditanyakan",
+    "subtitle": "Semua yang perlu kamu ketahui untuk memulai dengan Giggo",
+    "q1": {
+      "question": "Apa itu Giggo?",
+      "answer": "Giggo adalah platform yang menghubungkan kreator konten dengan brand untuk gig berbayar. Brand memposting tantangan (kontes) atau kolaborasi (deal), dan kreator mengirimkan konten terbaik mereka untuk mendapatkan uang."
+    },
+    "q2": {
+      "question": "Bagaimana cara kerja Kontes?",
+      "answer": "Brand memposting Kontes dengan total hadiah dan brief kreatif. Kreator mengirimkan konten mereka sebelum deadline. Setelah kontes berakhir, brand memilih pemenang yang menerima bagian dari hadiah. Beberapa pemenang bisa dipilih berdasarkan aturan kontes."
+    },
+    "q3": {
+      "question": "Bagaimana cara kerja Deal?",
+      "answer": "Deal adalah kolaborasi langsung antara brand dan kreator. Brand menetapkan pembayaran tetap dan persyaratan. Kreator mengirimkan konten mereka, dan setelah disetujui oleh brand, mereka menerima pembayaran penuh. Jika perlu revisi, brand bisa meminta hingga 3 kali perbaikan."
+    },
+    "q4": {
+      "question": "Bagaimana cara saya dibayar?",
+      "answer": "Setelah kamu menang kontes atau submission deal kamu disetujui, pembayaran diproses melalui sistem pembayaran aman kami. Dana biasanya ditransfer ke rekening bank atau metode pembayaran kamu dalam 3-5 hari kerja."
+    },
+    "q5": {
+      "question": "Platform apa saja yang didukung?",
+      "answer": "Giggo saat ini mendukung konten dari TikTok, Instagram Reels, YouTube Shorts, dan YouTube. Brand menentukan platform mana yang mereka inginkan untuk konten dalam persyaratan gig."
+    },
+    "q6": {
+      "question": "Apakah ada biaya untuk bergabung?",
+      "answer": "Bergabung dengan Giggo sepenuhnya gratis untuk kreator! Tidak ada biaya langganan atau biaya tersembunyi. Brand membayar biaya platform kecil untuk kampanye mereka untuk menutupi pemrosesan pembayaran dan pemeliharaan platform."
+    },
+    "q7": {
+      "question": "Bagaimana cara meningkatkan peluang menang?",
+      "answer": "Baca brief kreatif dengan cermat dan ikuti semua persyaratan. Buat konten autentik dan menarik yang selaras dengan visi brand. Kirim lebih awal dan pastikan konten kamu memenuhi persyaratan spesifik platform (hashtag, mention, dll.)."
+    },
+    "q8": {
+      "question": "Bisakah saya berpartisipasi di beberapa gig sekaligus?",
+      "answer": "Tentu saja! Kamu bisa bergabung dengan sebanyak mungkin kontes dan deal yang kamu mau. Kami mendorong kreator untuk menjelajahi berbagai peluang dan membangun hubungan dengan beberapa brand."
+    }
+  },
+  "footer": {
+    "tagline": "Tempat kreator mendapatkan gig. Terhubung dengan brand, kirim entri, dan dapat bayaran.",
+    "platform": "Platform",
+    "browseGigs": "Jelajahi Gig",
+    "forCreators": "Untuk Kreator",
+    "forBrands": "Untuk Brand",
+    "pricing": "Harga",
+    "resources": "Sumber Daya",
+    "helpCenter": "Pusat Bantuan",
+    "blog": "Blog",
+    "caseStudies": "Studi Kasus",
+    "apiDocs": "Dokumentasi API",
+    "legal": "Legal",
+    "privacyPolicy": "Kebijakan Privasi",
+    "termsOfService": "Syarat Layanan",
+    "cookiePolicy": "Kebijakan Cookie",
+    "copyright": "© {year} Giggo. Hak cipta dilindungi."
+  },
+  "trustBanner": {
+    "title": "Dipercaya oleh ratusan brand luar biasa"
+  },
+  "creatorHub": {
+    "badge": "Sorotan Kreator",
+    "title": "Kenali Kreator Terbaik Kami",
+    "subtitle": "Bergabung dengan ribuan kreator yang menghasilkan pendapatan nyata melalui kemitraan brand",
+    "featured": {
+      "openToWork": "Terbuka untuk Kerja",
+      "verified": "Terverifikasi",
+      "topRated": "Rating Tertinggi",
+      "followers": "Pengikut",
+      "engagement": "Engagement",
+      "earned": "Pendapatan",
+      "gigs": "Gig"
+    },
+    "risingStars": {
+      "minRate": "Min."
+    },
+    "liveActivity": {
+      "title": "Aktivitas Live",
+      "actions": {
+        "submittedProposal": "mengirim proposal",
+        "releasedPayment": "merilis pembayaran sebesar",
+        "joinedPlatform": "bergabung ke platform"
+      }
+    },
+    "stats": {
+      "activeCreators": "Kreator Aktif",
+      "paidOut": "Dibayarkan",
+      "brandPartners": "Partner Brand"
+    }
+  },
+  "auth": {
+    "welcomeBack": "Selamat datang kembali",
+    "createAccount": "Buat akun kamu",
+    "loginSubtitle": "Masuk untuk mengakses dashboard kamu",
+    "registerSubtitle": "Bergabung dengan ribuan kreator dan brand",
+    "fullName": "Nama Lengkap",
+    "email": "Email",
+    "password": "Kata Sandi",
+    "loginButton": "Masuk",
+    "registerButton": "Buat Akun",
+    "noAccount": "Belum punya akun?",
+    "hasAccount": "Sudah punya akun?",
+    "signUp": "Daftar",
+    "signIn": "Masuk",
+    "selectRole": "Saya ingin bergabung sebagai...",
+    "roleCreator": "Kreator",
+    "roleCreatorDesc": "Saya membuat konten dan ingin menghasilkan uang",
+    "roleBrand": "Brand",
+    "roleBrandDesc": "Saya ingin menjalankan kampanye dengan kreator",
+    "orContinueWith": "Atau lanjutkan dengan",
+    "google": "Google",
+    "forgotPassword": "Lupa kata sandi?",
+    "marketingTitle": {
+      "creator": "Mulai menghasilkan dari konten kamu",
+      "brand": "Temukan kreator yang sempurna"
+    },
+    "marketingPoints": {
+      "creator": [
+        "Akses gig brand eksklusif",
+        "Dibayar untuk kreativitas kamu",
+        "Bangun portofolio kamu"
+      ],
+      "brand": [
+        "Akses 10.000+ kreator terverifikasi",
+        "Luncurkan tantangan viral",
+        "Lacak analitik performa"
+      ]
+    }
+  },
+  "onboarding": {
+    "welcome": {
+      "title": "Selamat Datang di",
+      "subtitle": "Platform terbaik yang menghubungkan kreator dengan brand untuk gig berbayar",
+      "chooseRole": "Pilih bagaimana kamu ingin bergabung",
+      "creatorTitle": "Saya Kreator",
+      "creatorDesc": "Buat konten, ikut tantangan, dan dapat bayaran",
+      "brandTitle": "Saya Brand",
+      "brandDesc": "Luncurkan kampanye dan berkolaborasi dengan kreator",
+      "alreadyHaveAccount": "Sudah punya akun?",
+      "signIn": "Masuk"
+    },
+    "creator": {
+      "title": "Siapkan Profil Kreator Kamu",
+      "steps": {
+        "profile": "Profil",
+        "social": "Sosial",
+        "niche": "Niche",
+        "portfolio": "Portofolio",
+        "complete": "Selesai"
+      },
+      "profilePicture": "Foto Profil",
+      "uploadPhoto": "Unggah Foto",
+      "displayName": "Nama Tampilan",
+      "username": "Username",
+      "bio": "Bio",
+      "bioPlaceholder": "Ceritakan tentang dirimu kepada brand...",
+      "connectSocials": "Hubungkan Akun Sosial Kamu",
+      "connectSocialsDesc": "Hubungkan media sosial untuk menunjukkan jangkauan kamu",
+      "selectNiche": "Pilih Niche Kamu",
+      "selectNicheDesc": "Pilih kategori yang paling menggambarkan konten kamu",
+      "addPortfolio": "Tambah Item Portofolio",
+      "addPortfolioDesc": "Tampilkan karya terbaik kamu untuk menarik brand",
+      "uploadWork": "Unggah Karya",
+      "allSet": "Kamu Siap!",
+      "allSetDesc": "Profil kreator kamu sudah siap. Mulai jelajahi gig sekarang!",
+      "browseGigs": "Jelajahi Gig",
+      "goToDashboard": "Ke Dashboard"
+    },
+    "brand": {
+      "title": "Siapkan Profil Brand Kamu",
+      "steps": {
+        "logo": "Logo",
+        "company": "Perusahaan",
+        "audience": "Audiens",
+        "goals": "Tujuan"
+      },
+      "uploadLogo": "Unggah Logo Perusahaan",
+      "companyName": "Nama Perusahaan",
+      "website": "Website",
+      "industry": "Industri",
+      "targetAudience": "Target Audiens",
+      "targetAudienceDesc": "Tentukan siapa yang ingin kamu jangkau",
+      "ageRanges": "Rentang Usia",
+      "regions": "Wilayah",
+      "goals": "Tujuan Kampanye",
+      "goalsDesc": "Apa yang ingin kamu capai?",
+      "allSet": "Kamu Siap!",
+      "allSetDesc": "Profil brand kamu sudah siap. Mulai buat gig!",
+      "createFirstGig": "Buat Gig Pertama",
+      "goToDashboard": "Ke Dashboard"
+    }
+  },
+  "dashboard": {
+    "brand": {
+      "title": "Hub Brand",
+      "welcome": "Selamat datang kembali",
+      "newGig": "Gig Baru",
+      "tabs": {
+        "dashboard": "Dashboard",
+        "myGigs": "Gig Saya",
+        "entries": "Entri",
+        "analytics": "Analitik",
+        "payments": "Pembayaran",
+        "settings": "Pengaturan"
+      },
+      "stats": {
+        "activeGigs": "Gig Aktif",
+        "totalEntries": "Total Entri",
+        "totalSpent": "Total Pengeluaran",
+        "avgEngagement": "Rata-rata Engagement"
+      },
+      "recentGigs": "Gig Terbaru",
+      "viewAll": "Lihat Semua",
+      "daysLeft": "hari tersisa",
+      "entries": "entri"
+    },
+    "creator": {
+      "title": "Hub Kreator",
+      "welcome": "Selamat datang kembali",
+      "tabs": {
+        "dashboard": "Dashboard",
+        "myEntries": "Entri Saya",
+        "discover": "Jelajahi",
+        "earnings": "Penghasilan",
+        "portfolio": "Portofolio",
+        "settings": "Pengaturan"
+      },
+      "stats": {
+        "activeGigs": "Gig Aktif",
+        "totalEarnings": "Total Penghasilan",
+        "totalViews": "Total Dilihat",
+        "avgEngagement": "Rata-rata Engagement"
+      },
+      "activeGigs": "Gig Aktif Kamu",
+      "discoverGigs": "Temukan Gig Baru",
+      "viewAll": "Lihat Semua",
+      "daysLeft": "hari tersisa",
+      "submitted": "Terkirim",
+      "joinGig": "Gabung Gig"
+    }
+  },
+  "campaigns": {
+    "browse": {
+      "title": "Jelajahi Gig",
+      "subtitle": "Temukan peluang sempurna untuk konten kamu",
+      "searchPlaceholder": "Cari gig...",
+      "filters": "Filter",
+      "categories": {
+        "all": "Semua Kategori",
+        "fashion": "Fashion",
+        "beauty": "Kecantikan",
+        "tech": "Teknologi",
+        "food": "Makanan",
+        "lifestyle": "Gaya Hidup",
+        "fitness": "Kebugaran",
+        "gaming": "Gaming",
+        "travel": "Travel"
+      },
+      "types": {
+        "all": "Semua Tipe",
+        "contest": "Kontes",
+        "deal": "Kolaborasi"
+      },
+      "tabs": {
+        "forYou": "Untuk Kamu",
+        "trending": "Trending",
+        "new": "Baru",
+        "endingSoon": "Segera Berakhir"
+      },
+      "noResults": "Tidak ada gig ditemukan",
+      "noResultsDesc": "Coba sesuaikan filter atau kata kunci pencarian kamu",
+      "clearFilters": "Hapus Filter"
+    },
+    "detail": {
+      "backToGigs": "Kembali ke Gig",
+      "joinGig": "Gabung Gig Ini",
+      "alreadyJoined": "Sudah Bergabung",
+      "bookmark": "Simpan",
+      "share": "Bagikan",
+      "prizePool": "Total Hadiah",
+      "timeLeft": "Waktu Tersisa",
+      "entries": "Entri",
+      "views": "Dilihat",
+      "tabs": {
+        "brief": "Brief",
+        "rules": "Aturan",
+        "payouts": "Hadiah",
+        "leaderboard": "Papan Peringkat"
+      },
+      "about": "Tentang Gig Ini",
+      "requirements": "Persyaratan",
+      "platforms": "Platform",
+      "hashtags": "Hashtag Wajib",
+      "prizeBreakdown": "Rincian Hadiah",
+      "place": "Peringkat",
+      "prize": "Hadiah",
+      "hostedBy": "Diselenggarakan oleh",
+      "visitWebsite": "Kunjungi Website"
+    },
+    "create": {
+      "title": "Buat Gig Baru",
+      "steps": {
+        "type": "Tipe",
+        "details": "Detail",
+        "payout": "Hadiah",
+        "review": "Tinjau"
+      },
+      "selectType": "Pilih Tipe Gig",
+      "contest": {
+        "title": "Kontes",
+        "description": "Beberapa kreator bersaing, entri terbaik menang hadiah"
+      },
+      "deal": {
+        "title": "Kolaborasi",
+        "description": "Kolaborasi langsung dengan pembayaran tetap"
+      },
+      "gigDetails": "Detail Gig",
+      "gigTitle": "Judul Gig",
+      "category": "Kategori",
+      "description": "Deskripsi",
+      "brief": "Brief Kreatif",
+      "uploadAssets": "Unggah Aset",
+      "payoutSettings": "Pengaturan Hadiah",
+      "totalBudget": "Total Anggaran",
+      "prizeBreakdown": "Rincian Hadiah",
+      "firstPlace": "Juara 1",
+      "secondPlace": "Juara 2",
+      "thirdPlace": "Juara 3",
+      "startDate": "Tanggal Mulai",
+      "endDate": "Tanggal Berakhir",
+      "reviewGig": "Tinjau Gig Kamu",
+      "launchGig": "Luncurkan Gig",
+      "saveDraft": "Simpan sebagai Draf"
+    }
+  },
+  "leaderboard": {
+    "title": "Papan Peringkat",
+    "rank": "Peringkat",
+    "creator": "Kreator",
+    "views": "Dilihat",
+    "engagement": "Engagement",
+    "you": "(Kamu)"
+  },
+  "emptyState": {
+    "gigs": {
+      "title": "Belum ada gig",
+      "description": "Mulai jelajahi gig dan temukan peluang sempurna untuk kamu."
+    },
+    "entries": {
+      "title": "Belum ada entri",
+      "description": "Gabung gig dan kirim entri pertama kamu untuk mulai menghasilkan."
+    },
+    "earnings": {
+      "title": "Belum ada penghasilan",
+      "description": "Menangkan tantangan untuk mulai menghasilkan dan bangun portofolio kamu."
+    },
+    "search": {
+      "title": "Tidak ada hasil ditemukan",
+      "description": "Coba sesuaikan pencarian atau filter kamu untuk menemukan yang kamu cari."
+    },
+    "orders": {
+      "title": "Belum ada pesanan",
+      "description": "Buat gig pertamamu untuk mulai berkolaborasi dengan kreator."
+    }
+  },
+  "submissions": {
+    "dialog": {
+      "title": "Kirim Konten Kamu",
+      "subtitle": "Bagikan link konten yang sudah kamu buat untuk gig ini",
+      "contentUrl": "Link Konten",
+      "contentUrlPlaceholder": "Link Google Drive / Instagram / TikTok",
+      "caption": "Keterangan (Opsional)",
+      "captionPlaceholder": "Tambahkan keterangan untuk konten kamu...",
+      "submit": "Kirim Konten",
+      "submitting": "Mengirim...",
+      "successTitle": "Berhasil Submit!",
+      "successDescription": "Entri kamu sudah terkirim. Tunggu review dari brand.",
+      "errorTitle": "Gagal mengirim",
+      "errorDescription": "Terjadi kesalahan. Silakan coba lagi."
+    },
+    "review": {
+      "title": "Review Entri",
+      "noSubmissions": "Belum ada entri untuk gig ini",
+      "approve": "Setujui",
+      "reject": "Tolak",
+      "requestRedo": "Minta Revisi",
+      "markWinner": "Tandai Pemenang",
+      "viewContent": "Lihat Konten",
+      "status": {
+        "submitted": "Menunggu Review",
+        "approved": "Disetujui",
+        "declined": "Ditolak",
+        "redo_requested": "Perlu Revisi",
+        "winner": "Pemenang"
+      },
+      "winnerConfirm": {
+        "title": "Konfirmasi Pemenang",
+        "message": "Apakah kamu yakin ingin menandai kreator ini sebagai pemenang?",
+        "confirm": "Ya, Tandai Pemenang",
+        "cancel": "Batal"
+      },
+      "challengeCompleted": {
+        "title": "Challenge Selesai!",
+        "message": "Pemenang sudah dipilih. Pembayaran hadiah akan diproses oleh tim Giggo."
+      }
+    }
+  },
+  "language": {
+    "en": "English",
+    "id": "Bahasa Indonesia",
+    "switchTo": "Ganti Bahasa"
+  },
+  "brandsPage": {
+    "hero": {
+      "badge": "Untuk Brand",
+      "title": "Kembangkan Brand-mu dengan",
+      "titleHighlight": "UGC Autentik",
+      "subtitle": "Berhenti buang anggaran untuk iklan berlebihan. Dapatkan konten berkualitas dari kreator nyata dalam hitungan klik.",
+      "cta": "Mulai Rekrut Kreator",
+      "trustedBy": "Dipercaya oleh brand terkemuka"
+    },
+    "benefits": {
+      "sectionTitle": "Mengapa Brand Memilih Giggo",
+      "cheaper": {
+        "title": "10x Lebih Murah dari Agensi",
+        "comparison": {
+          "agency": "Agensi Tradisional",
+          "giggo": "Giggo UGC"
+        }
+      },
+      "rights": {
+        "title": "Hak Penggunaan Penuh",
+        "description": "Miliki konten kamu. Gunakan di mana saja."
+      },
+      "shipping": {
+        "title": "Logistik Pengiriman Ditangani",
+        "description": "Kami atur pengiriman produk ke kreator."
+      },
+      "creators": {
+        "title": "Kreator Terverifikasi",
+        "description": "Akses 12.500+ kreator konten terverifikasi."
+      }
+    },
+    "workflow": {
+      "title": "Dari Brief ke",
+      "titleHighlight": "Peluncuran",
+      "step1": { "title": "Buat Brief", "description": "Tentukan kebutuhan kamu" },
+      "step2": { "title": "Kirim Produk", "description": "Kirim barang ke kreator" },
+      "step3": { "title": "Terima Konten", "description": "Dapatkan video dalam 7 hari" },
+      "step4": { "title": "Luncurkan Iklan", "description": "Unduh dan jalankan iklan" }
+    },
+    "showcase": {
+      "title": "Contoh UGC",
+      "titleHighlight": "Berkualitas",
+      "subtitle": "Konten nyata. Hasil nyata."
+    },
+    "cta": {
+      "title": "Siap Mengembangkan Konten Kamu?",
+      "subtitle": "Bergabung dengan 850+ brand yang sudah membuat UGC berkualitas dengan Giggo.",
+      "button": "Mulai Uji Coba Gratis"
+    }
+  },
+  "creatorsPage": {
+    "hero": {
+      "badge": "Untuk Kreator",
+      "title": "Ubah Kontenmu Jadi",
+      "titleHighlight": "Penghasilan Nyata",
+      "subtitle": "Bergabung dengan 12.500+ kreator yang menghasilkan uang dari kemitraan brand. Tanpa minimum follower. Dibayar untuk berkreasi.",
+      "cta": "Mulai Menghasilkan",
+      "ctaSecondary": "Jelajahi Gig",
+      "stats": {
+        "paidOut": "Dibayarkan ke Kreator",
+        "creators": "Kreator Aktif",
+        "avgEarning": "Rata-rata per Gig"
+      },
+      "earningsCard": {
+        "title": "Penghasilan Bulan Ini",
+        "growth": "vs bulan lalu",
+        "topCreator": "Kreator Top"
+      }
+    },
+    "benefits": {
+      "title": "Mengapa Kreator",
+      "titleHighlight": "Suka Giggo",
+      "subtitle": "Semua yang kamu butuhkan untuk mengubah kreativitas jadi karir",
+      "earnings": {
+        "title": "Bayaran Kompetitif",
+        "description": "Hasilkan $200-$2.000+ per gig berdasarkan skill kamu"
+      },
+      "fast": {
+        "title": "Pembayaran Cepat",
+        "description": "Dibayar dalam 3-5 hari setelah disetujui"
+      },
+      "secure": {
+        "title": "Platform Aman",
+        "description": "Pembayaran terlindungi dan brand terverifikasi"
+      },
+      "flexible": {
+        "title": "Kerja Kapan Saja",
+        "description": "Buat konten sesuai jadwal kamu"
+      }
+    },
+    "stories": {
+      "title": "Cerita",
+      "titleHighlight": "Sukses",
+      "subtitle": "Kreator nyata, penghasilan nyata",
+      "earned": "Total Dihasilkan",
+      "gigs": "Gig Selesai"
+    },
+    "portfolio": {
+      "title": "Showcase",
+      "titleHighlight": "Kreator",
+      "subtitle": "Lihat apa yang kreator top buat di Giggo"
+    },
+    "workflow": {
+      "title": "Cara",
+      "titleHighlight": "Memulai",
+      "step1": { "title": "Buat Profil", "description": "Daftar dan hubungkan sosial media" },
+      "step2": { "title": "Jelajahi Gig", "description": "Temukan brand yang kamu suka" },
+      "step3": { "title": "Kirim Konten", "description": "Buat dan unggah video" },
+      "step4": { "title": "Dapat Bayaran", "description": "Terima pembayaran cepat" }
+    },
+    "cta": {
+      "title": "Siap Dibayar untuk Kontenmu?",
+      "subtitle": "Bergabung dengan ribuan kreator yang sudah menghasilkan di Giggo. Tanpa pengalaman diperlukan.",
+      "button": "Gabung sebagai Kreator"
+    }
+  },
+  "brief": {
+    "hook": "Hook",
+    "keySellingPoints": "Poin Penjualan Utama",
+    "callToAction": "Ajakan Bertindak",
+    "description": "Deskripsi Brief",
+    "lockedMessage": "Lamar gig ini untuk melihat brief lengkap",
+    "applyToView": "Lamar gig ini untuk menerima brief terstruktur lengkap dengan Hook, Poin Penjualan Utama, dan Ajakan Bertindak."
+  },
+  "feedback": {
+    "selectIssues": "Pilih masalah pada submission ini:",
+    "lighting": "Pencahayaan terlalu gelap",
+    "audio": "Audio tidak jelas",
+    "usp": "Tidak menyebutkan USP",
+    "duration": "Video terlalu pendek/panjang",
+    "quality": "Kualitas video buruk",
+    "hook": "Hook tidak menarik",
+    "other": "Lainnya (jelaskan)",
+    "otherPlaceholder": "Jelaskan masalah secara detail...",
+    "dialogDescription": "Pilih masalah atau berikan feedback detail untuk membantu kreator memperbaiki.",
+    "sendFeedback": "Kirim Feedback"
+  },
+  "reliability": {
+    "title": "Skor Reliabilitas",
+    "description": "Skor ini mencerminkan tingkat pengiriman tepat waktu berdasarkan gig yang sudah diselesaikan.",
+    "onTime": "Tepat Waktu"
+  }
+}

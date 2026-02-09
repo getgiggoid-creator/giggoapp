@@ -1,0 +1,12 @@
+# Aturan untuk SEMUA robot (Google, Bing, Twitter, dll)
+User-agent: *
+Allow: /
+
+# Larang robot masuk ke area privat/sensitif
+Disallow: /auth
+Disallow: /dashboard
+Disallow: /admin
+Disallow: /api
+
+# Beri tahu lokasi Sitemap (Ganti domain sesuai website yang dipakai)
+Sitemap: https://giggo.id/sitemap.xml

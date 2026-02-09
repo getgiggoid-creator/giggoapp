@@ -1,0 +1,32 @@
+#!/usr/bin/env node
+
+/**
+ * Pre-commit hook
+ * Prevent committing .env files
+ * Run lint-staged for staged files
+ */
+
+const { execSync } = require("child_process");
+
+try {
+  // 1️⃣ Cek jika ada .env atau .env.local yang staged
+  const output = execSync(
+    'git diff --cached --name-only | grep -E "^\\.env(\\.local)?$"',
+    { stdio: "pipe", encoding: "utf-8" }
+  );
+
+  if (output.trim()) {
+    console.error("❌ Error: .env files should not be committed!");
+    console.error("   Please add .env and .env.local to .gitignore");
+    process.exit(1);
+  }
+
+  // 2️⃣ Jalankan lint-staged
+  execSync("npx lint-staged", { stdio: "inherit" });
+} catch (err) {
+  // Jika grep tidak menemukan file, output kosong → lanjut
+  if (err.status !== 1) {
+    console.error(err.message);
+    process.exit(err.status || 1);
+  }
+}

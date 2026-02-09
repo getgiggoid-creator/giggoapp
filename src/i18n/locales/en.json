@@ -1,0 +1,723 @@
+{
+  "common": {
+    "login": "Log In",
+    "signup": "Sign Up",
+    "getStarted": "Get Started",
+    "learnMore": "Learn More",
+    "submit": "Submit",
+    "cancel": "Cancel",
+    "save": "Save",
+    "back": "Back",
+    "next": "Next",
+    "continue": "Continue",
+    "search": "Search",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "followers": "Followers",
+    "views": "Views",
+    "payout": "Payout",
+    "open": "Open",
+    "closed": "Closed",
+    "draft": "Draft",
+    "live": "Live",
+    "contest": "Contest",
+    "deal": "Deal",
+    "challenge": "Challenge",
+    "collab": "Collab"
+  },
+  "nav": {
+    "home": "Home",
+    "gigs": "Gigs",
+    "forCreators": "For Creators",
+    "forBrands": "For Brands",
+    "pricing": "Pricing",
+    "browseCampaigns": "Browse Gigs"
+  },
+  "hero": {
+    "badge": "Where Creators Get the Gig",
+    "headline": "Create.",
+    "headlineHighlight": "Get Paid.",
+    "headlineEnd": "Repeat.",
+    "subheadline": "Giggo connects creators with brands for paid gigs. Browse challenges, submit your best content, and earn money doing what you love.",
+    "ctaBrand": "I'm a Brand",
+    "ctaCreator": "I'm a Creator",
+    "statsCreators": "Active Creators",
+    "statsBrands": "Brand Partners",
+    "statsPaid": "Paid to Creators",
+    "nikeChallenge": "Nike Challenge",
+    "nikeAmount": "$5,000 Payout",
+    "fashion": "Fashion",
+    "lifestyle": "Lifestyle",
+    "topCreator": "Top Creator",
+    "creatorHubPreview": "Creator Hub Preview",
+    "creators": {
+      "badge": "The #1 Marketplace for Verified Creators",
+      "headline1": "Create. Get Paid.",
+      "headline2": "Repeat.",
+      "subheadline": "Giggo connects creators with brands looking for authentic UGC. Apply to gigs, create content, get paid securely.",
+      "cta": "Start Earning",
+      "secondaryCta": "Browse Gigs",
+      "stat1": "Verified Brands",
+      "stat2": "Secure Escrow",
+      "stat3": "10k+ Creators"
+    },
+    "brands": {
+      "badge": "Trusted by 850+ Leading Brands",
+      "headline1": "Scale Your UGC.",
+      "headline2": "Instantly.",
+      "subheadline": "Access pre-vetted creators ready to produce high-converting content. Launch campaigns in minutes, not weeks.",
+      "cta": "Start Hiring",
+      "secondaryCta": "View Creators",
+      "stat1": "Pre-vetted Creators",
+      "stat2": "Full Usage Rights",
+      "stat3": "7-Day Delivery"
+    }
+  },
+  "features": {
+    "title": "Everything You Need to",
+    "titleHighlight": "Succeed",
+    "subtitle": "Powerful tools for brands to launch gigs and creators to monetize their content.",
+    "launchGigs": {
+      "title": "Launch Gigs",
+      "description": "Create branded challenges and collabs that attract the best content creators."
+    },
+    "collectEntries": {
+      "title": "Collect Entries",
+      "description": "Receive high-quality video entries aligned with your brand's vision."
+    },
+    "challengeSystem": {
+      "title": "Challenge System",
+      "description": "Run engaging challenges with leaderboards and payout tiers."
+    },
+    "easyPayouts": {
+      "title": "Easy Payouts",
+      "description": "Secure payment processing for creator rewards and collabs."
+    },
+    "analyticsHub": {
+      "title": "Analytics Hub",
+      "description": "Track gig performance and creator engagement in real-time."
+    },
+    "verifiedProfiles": {
+      "title": "Verified Profiles",
+      "description": "Verified brands and creators for trusted partnerships."
+    }
+  },
+  "howItWorks": {
+    "title": "How It",
+    "titleHighlight": "Works",
+    "subtitle": "Simple process for brands and creators to collaborate on Giggo.",
+    "forBrands": "For Brands",
+    "forCreators": "For Creators",
+    "brand": {
+      "step1": {
+        "title": "Create a Gig",
+        "description": "Set up your challenge or collab with payout, gig brief, and requirements."
+      },
+      "step2": {
+        "title": "Receive Entries",
+        "description": "Creators submit their video entries based on your gig brief."
+      },
+      "step3": {
+        "title": "Pick Winners",
+        "description": "Review, score, and choose the best content for your brand."
+      },
+      "step4": {
+        "title": "Pay & Launch",
+        "description": "Distribute payouts and use the content across your channels."
+      }
+    },
+    "creator": {
+      "step1": {
+        "title": "Browse Gigs",
+        "description": "Discover brand opportunities that match your niche and style."
+      },
+      "step2": {
+        "title": "Submit Entry",
+        "description": "Create and upload your video following the gig brief."
+      },
+      "step3": {
+        "title": "Earn Points",
+        "description": "Get scored based on views, engagement, and creativity."
+      },
+      "step4": {
+        "title": "Get Paid",
+        "description": "Receive payout when you win a challenge or complete a collab."
+      }
+    }
+  },
+  "videoShowcase": {
+    "title": "Creator",
+    "titleHighlight": "Spotlight",
+    "subtitle": "See what creators are making on Giggo",
+    "watchVideo": "Watch Video",
+    "categories": {
+      "all": "All",
+      "fashion": "Fashion",
+      "beauty": "Beauty",
+      "tech": "Tech",
+      "food": "Food",
+      "lifestyle": "Lifestyle",
+      "fitness": "Fitness"
+    }
+  },
+  "cta": {
+    "badge": "Join 10,000+ Creators & 500+ Brands",
+    "title": "Ready to Land Your Next Gig?",
+    "subtitle": "Whether you're a brand looking to launch viral challenges or a creator ready to get paid for your content, Giggo has you covered.",
+    "primary": "Get Started Free",
+    "secondary": "Browse Gigs"
+  },
+  "faq": {
+    "title": "Frequently Asked",
+    "titleHighlight": "Questions",
+    "subtitle": "Everything you need to know about getting started with Giggo",
+    "q1": {
+      "question": "What is Giggo?",
+      "answer": "Giggo is a platform that connects content creators with brands for paid gigs. Brands post challenges (contests) or deals (collaborations), and creators submit their best content to earn money."
+    },
+    "q2": {
+      "question": "How do Contests work?",
+      "answer": "Brands post a Contest with a prize pool and creative brief. Creators submit their content before the deadline. After the contest ends, brands select winners who receive their share of the prize pool. Multiple winners can be selected based on the contest rules."
+    },
+    "q3": {
+      "question": "How do Deals work?",
+      "answer": "Deals are direct collaborations between brands and creators. Brands set a fixed payment and requirements. Creators submit their content, and once approved by the brand, they receive the full payment. If revisions are needed, brands can request up to 3 redos."
+    },
+    "q4": {
+      "question": "How do I get paid?",
+      "answer": "Once you win a contest or have your deal submission approved, payments are processed through our secure payment system. Funds are typically transferred to your connected bank account or payment method within 3-5 business days."
+    },
+    "q5": {
+      "question": "What platforms are supported?",
+      "answer": "Giggo currently supports content from TikTok, Instagram Reels, YouTube Shorts, and YouTube. Brands specify which platforms they want content for in their gig requirements."
+    },
+    "q6": {
+      "question": "Is there a fee to join?",
+      "answer": "Joining Giggo is completely free for creators! There are no subscription fees or hidden charges. Brands pay a small platform fee on their campaigns to cover payment processing and platform maintenance."
+    },
+    "q7": {
+      "question": "How do I increase my chances of winning?",
+      "answer": "Read the creative brief carefully and follow all requirements. Create authentic, engaging content that aligns with the brand's vision. Submit early and ensure your content meets the platform-specific requirements (hashtags, mentions, etc.)."
+    },
+    "q8": {
+      "question": "Can I participate in multiple gigs at once?",
+      "answer": "Absolutely! You can join as many contests and deals as you'd like. We encourage creators to explore different opportunities and build relationships with multiple brands."
+    }
+  },
+  "footer": {
+    "tagline": "Where creators get the gig. Connect with brands, submit entries, and get paid.",
+    "platform": "Platform",
+    "browseGigs": "Browse Gigs",
+    "forCreators": "For Creators",
+    "forBrands": "For Brands",
+    "pricing": "Pricing",
+    "resources": "Resources",
+    "helpCenter": "Help Center",
+    "blog": "Blog",
+    "caseStudies": "Case Studies",
+    "apiDocs": "API Docs",
+    "legal": "Legal",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "cookiePolicy": "Cookie Policy",
+    "copyright": "© {year} Giggo. All rights reserved."
+  },
+  "trustBanner": {
+    "title": "Trusted by 100's of amazing brands"
+  },
+  "creatorHub": {
+    "badge": "Creator Spotlight",
+    "title": "Meet Our Top Creators",
+    "subtitle": "Join thousands of creators earning real income through brand partnerships",
+    "featured": {
+      "openToWork": "Open to Work",
+      "verified": "Verified",
+      "topRated": "Top Rated",
+      "followers": "Followers",
+      "engagement": "Engagement",
+      "earned": "Earned",
+      "gigs": "Gigs"
+    },
+    "risingStars": {
+      "minRate": "Min."
+    },
+    "liveActivity": {
+      "title": "Live Activity",
+      "actions": {
+        "submittedProposal": "submitted a proposal",
+        "releasedPayment": "released payment of",
+        "joinedPlatform": "joined the platform"
+      }
+    },
+    "stats": {
+      "activeCreators": "Active Creators",
+      "paidOut": "Paid Out",
+      "brandPartners": "Brand Partners"
+    }
+  },
+  "auth": {
+    "welcomeBack": "Welcome back",
+    "createAccount": "Create your account",
+    "loginSubtitle": "Sign in to access your dashboard",
+    "registerSubtitle": "Join thousands of creators and brands",
+    "fullName": "Full Name",
+    "email": "Email",
+    "password": "Password",
+    "loginButton": "Log In",
+    "registerButton": "Create Account",
+    "noAccount": "Don't have an account?",
+    "hasAccount": "Already have an account?",
+    "signUp": "Sign up",
+    "signIn": "Sign in",
+    "selectRole": "I want to join as a...",
+    "roleCreator": "Creator",
+    "roleCreatorDesc": "I create content and want to earn money",
+    "roleBrand": "Brand",
+    "roleBrandDesc": "I want to run campaigns with creators",
+    "orContinueWith": "Or continue with",
+    "google": "Google",
+    "forgotPassword": "Forgot password?",
+    "marketingTitle": {
+      "creator": "Start earning from your content",
+      "brand": "Find the perfect creators"
+    },
+    "marketingPoints": {
+      "creator": [
+        "Access exclusive brand gigs",
+        "Get paid for your creativity",
+        "Build your portfolio"
+      ],
+      "brand": [
+        "Access 10,000+ verified creators",
+        "Launch viral challenges",
+        "Track performance analytics"
+      ]
+    }
+  },
+  "onboarding": {
+    "welcome": {
+      "title": "Welcome to",
+      "subtitle": "The ultimate platform connecting creators with brands for paid gigs",
+      "chooseRole": "Choose how you want to join",
+      "creatorTitle": "I'm a Creator",
+      "creatorDesc": "Create content, join challenges, and get paid",
+      "brandTitle": "I'm a Brand",
+      "brandDesc": "Launch campaigns and collaborate with creators",
+      "alreadyHaveAccount": "Already have an account?",
+      "signIn": "Sign in"
+    },
+    "creator": {
+      "title": "Set Up Your Creator Profile",
+      "steps": {
+        "profile": "Profile",
+        "social": "Social",
+        "niche": "Niche",
+        "portfolio": "Portfolio",
+        "complete": "Complete"
+      },
+      "profilePicture": "Profile Picture",
+      "uploadPhoto": "Upload Photo",
+      "displayName": "Display Name",
+      "username": "Username",
+      "bio": "Bio",
+      "bioPlaceholder": "Tell brands about yourself...",
+      "connectSocials": "Connect Your Social Accounts",
+      "connectSocialsDesc": "Link your social media to showcase your reach",
+      "selectNiche": "Select Your Niche",
+      "selectNicheDesc": "Choose categories that best describe your content",
+      "addPortfolio": "Add Portfolio Items",
+      "addPortfolioDesc": "Showcase your best work to attract brands",
+      "uploadWork": "Upload Work",
+      "allSet": "You're All Set!",
+      "allSetDesc": "Your creator profile is ready. Start browsing gigs now!",
+      "browseGigs": "Browse Gigs",
+      "goToDashboard": "Go to Dashboard"
+    },
+    "brand": {
+      "title": "Set Up Your Brand Profile",
+      "steps": {
+        "logo": "Logo",
+        "company": "Company",
+        "audience": "Audience",
+        "goals": "Goals"
+      },
+      "uploadLogo": "Upload Company Logo",
+      "companyName": "Company Name",
+      "website": "Website",
+      "industry": "Industry",
+      "targetAudience": "Target Audience",
+      "targetAudienceDesc": "Define who you want to reach",
+      "ageRanges": "Age Ranges",
+      "regions": "Regions",
+      "goals": "Campaign Goals",
+      "goalsDesc": "What do you want to achieve?",
+      "allSet": "You're All Set!",
+      "allSetDesc": "Your brand profile is ready. Start creating gigs!",
+      "createFirstGig": "Create First Gig",
+      "goToDashboard": "Go to Dashboard"
+    }
+  },
+  "dashboard": {
+    "brand": {
+      "title": "Brand Hub",
+      "welcome": "Welcome back",
+      "newGig": "New Gig",
+      "tabs": {
+        "dashboard": "Dashboard",
+        "myGigs": "My Gigs",
+        "entries": "Entries",
+        "analytics": "Analytics",
+        "payments": "Payments",
+        "settings": "Settings"
+      },
+      "stats": {
+        "activeGigs": "Active Gigs",
+        "totalEntries": "Total Entries",
+        "totalSpent": "Total Spent",
+        "avgEngagement": "Avg. Engagement"
+      },
+      "recentGigs": "Recent Gigs",
+      "viewAll": "View All",
+      "daysLeft": "days left",
+      "entries": "entries"
+    },
+    "creator": {
+      "title": "Creator Hub",
+      "welcome": "Welcome back",
+      "tabs": {
+        "dashboard": "Dashboard",
+        "myEntries": "My Entries",
+        "discover": "Discover",
+        "earnings": "Earnings",
+        "portfolio": "Portfolio",
+        "settings": "Settings"
+      },
+      "stats": {
+        "activeGigs": "Active Gigs",
+        "totalEarnings": "Total Earnings",
+        "totalViews": "Total Views",
+        "avgEngagement": "Avg. Engagement"
+      },
+      "activeGigs": "Your Active Gigs",
+      "discoverGigs": "Discover New Gigs",
+      "viewAll": "View All",
+      "daysLeft": "days left",
+      "submitted": "Submitted",
+      "joinGig": "Join Gig"
+    }
+  },
+  "campaigns": {
+    "browse": {
+      "title": "Browse Gigs",
+      "subtitle": "Find the perfect opportunity for your content",
+      "searchPlaceholder": "Search gigs...",
+      "filters": "Filters",
+      "categories": {
+        "all": "All Categories",
+        "fashion": "Fashion",
+        "beauty": "Beauty",
+        "tech": "Tech",
+        "food": "Food",
+        "lifestyle": "Lifestyle",
+        "fitness": "Fitness",
+        "gaming": "Gaming",
+        "travel": "Travel"
+      },
+      "types": {
+        "all": "All Types",
+        "contest": "Contests",
+        "deal": "Deals"
+      },
+      "tabs": {
+        "forYou": "For You",
+        "trending": "Trending",
+        "new": "New",
+        "endingSoon": "Ending Soon"
+      },
+      "noResults": "No gigs found",
+      "noResultsDesc": "Try adjusting your filters or search query",
+      "clearFilters": "Clear Filters"
+    },
+    "detail": {
+      "backToGigs": "Back to Gigs",
+      "joinGig": "Join This Gig",
+      "alreadyJoined": "Already Joined",
+      "bookmark": "Bookmark",
+      "share": "Share",
+      "prizePool": "Prize Pool",
+      "timeLeft": "Time Left",
+      "entries": "Entries",
+      "views": "Views",
+      "tabs": {
+        "brief": "Brief",
+        "rules": "Rules",
+        "payouts": "Payouts",
+        "leaderboard": "Leaderboard"
+      },
+      "about": "About This Gig",
+      "requirements": "Requirements",
+      "platforms": "Platforms",
+      "hashtags": "Required Hashtags",
+      "prizeBreakdown": "Prize Breakdown",
+      "place": "Place",
+      "prize": "Prize",
+      "hostedBy": "Hosted by",
+      "visitWebsite": "Visit Website"
+    },
+    "create": {
+      "title": "Create New Gig",
+      "steps": {
+        "type": "Type",
+        "details": "Details",
+        "payout": "Payout",
+        "review": "Review"
+      },
+      "selectType": "Select Gig Type",
+      "contest": {
+        "title": "Contest",
+        "description": "Multiple creators compete, best entries win prizes"
+      },
+      "deal": {
+        "title": "Deal",
+        "description": "Direct collaboration with fixed payment"
+      },
+      "gigDetails": "Gig Details",
+      "gigTitle": "Gig Title",
+      "category": "Category",
+      "description": "Description",
+      "brief": "Creative Brief",
+      "uploadAssets": "Upload Assets",
+      "payoutSettings": "Payout Settings",
+      "totalBudget": "Total Budget",
+      "prizeBreakdown": "Prize Breakdown",
+      "firstPlace": "1st Place",
+      "secondPlace": "2nd Place",
+      "thirdPlace": "3rd Place",
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "reviewGig": "Review Your Gig",
+      "launchGig": "Launch Gig",
+      "saveDraft": "Save as Draft"
+    }
+  },
+  "leaderboard": {
+    "title": "Leaderboard",
+    "rank": "Rank",
+    "creator": "Creator",
+    "views": "Views",
+    "engagement": "Engagement",
+    "you": "(You)"
+  },
+  "emptyState": {
+    "gigs": {
+      "title": "No gigs yet",
+      "description": "Start exploring gigs and find the perfect opportunity for you."
+    },
+    "entries": {
+      "title": "No entries yet",
+      "description": "Join a gig and submit your first entry to start earning."
+    },
+    "earnings": {
+      "title": "No earnings yet",
+      "description": "Win challenges to start earning payouts and build your portfolio."
+    },
+    "search": {
+      "title": "No results found",
+      "description": "Try adjusting your search or filters to find what you're looking for."
+    },
+    "orders": {
+      "title": "No orders yet",
+      "description": "Create your first gig to start collaborating with creators."
+    }
+  },
+  "submissions": {
+    "dialog": {
+      "title": "Submit Your Content",
+      "subtitle": "Share the link to the content you created for this gig",
+      "contentUrl": "Content Link",
+      "contentUrlPlaceholder": "Google Drive / Instagram / TikTok link",
+      "caption": "Caption (Optional)",
+      "captionPlaceholder": "Add a caption for your content...",
+      "submit": "Submit Content",
+      "submitting": "Submitting...",
+      "successTitle": "Successfully Submitted!",
+      "successDescription": "Your entry has been submitted. Wait for brand review.",
+      "errorTitle": "Failed to submit",
+      "errorDescription": "Something went wrong. Please try again."
+    },
+    "review": {
+      "title": "Review Entries",
+      "noSubmissions": "No entries for this gig yet",
+      "approve": "Approve",
+      "reject": "Decline",
+      "requestRedo": "Request Redo",
+      "markWinner": "Mark as Winner",
+      "viewContent": "View Content",
+      "status": {
+        "submitted": "Pending Review",
+        "approved": "Approved",
+        "declined": "Declined",
+        "redo_requested": "Needs Revision",
+        "winner": "Winner"
+      },
+      "winnerConfirm": {
+        "title": "Confirm Winner",
+        "message": "Are you sure you want to mark this creator as a winner?",
+        "confirm": "Yes, Mark Winner",
+        "cancel": "Cancel"
+      },
+      "challengeCompleted": {
+        "title": "Challenge Completed!",
+        "message": "Winner has been selected. Payout will be processed by the Giggo team."
+      }
+    }
+  },
+  "language": {
+    "en": "English",
+    "id": "Bahasa Indonesia",
+    "switchTo": "Switch Language"
+  },
+  "brandsPage": {
+    "hero": {
+      "badge": "For Brands",
+      "title": "Scale Your Brand with",
+      "titleHighlight": "Authentic UGC",
+      "subtitle": "Stop wasting budget on polished ads. Get high-converting content from real creators in clicks.",
+      "cta": "Start Hiring Creators",
+      "trustedBy": "Trusted by leading brands"
+    },
+    "benefits": {
+      "sectionTitle": "Why Brands Choose Giggo",
+      "cheaper": {
+        "title": "10x Cheaper than Agencies",
+        "comparison": {
+          "agency": "Traditional Agency",
+          "giggo": "Giggo UGC"
+        }
+      },
+      "rights": {
+        "title": "Full Usage Rights",
+        "description": "Own your content. Use it anywhere."
+      },
+      "shipping": {
+        "title": "Shipping Logistics Handled",
+        "description": "We manage product delivery to creators."
+      },
+      "creators": {
+        "title": "Pre-vetted Creators",
+        "description": "Access 12,500+ verified content creators."
+      }
+    },
+    "workflow": {
+      "title": "From Brief to",
+      "titleHighlight": "Launch",
+      "step1": { "title": "Create Brief", "description": "Set your requirements" },
+      "step2": { "title": "Ship Product", "description": "Send items to creators" },
+      "step3": { "title": "Get Content", "description": "Receive videos in 7 days" },
+      "step4": { "title": "Launch Ads", "description": "Download and run ads" }
+    },
+    "showcase": {
+      "title": "High Converting",
+      "titleHighlight": "UGC Examples",
+      "subtitle": "Real content. Real results."
+    },
+    "cta": {
+      "title": "Ready to Scale Your Content?",
+      "subtitle": "Join 850+ brands already creating high-converting UGC with Giggo.",
+      "button": "Start Free Trial"
+    }
+  },
+  "creatorsPage": {
+    "hero": {
+      "badge": "For Creators",
+      "title": "Turn Your Content Into",
+      "titleHighlight": "Real Income",
+      "subtitle": "Join 12,500+ creators earning money from brand partnerships. No follower minimum. Get paid to create.",
+      "cta": "Start Earning Today",
+      "ctaSecondary": "Browse Gigs",
+      "stats": {
+        "paidOut": "Paid to Creators",
+        "creators": "Active Creators",
+        "avgEarning": "Avg. per Gig"
+      },
+      "earningsCard": {
+        "title": "This Month's Earnings",
+        "growth": "vs last month",
+        "topCreator": "Top Creator"
+      }
+    },
+    "benefits": {
+      "title": "Why Creators",
+      "titleHighlight": "Love Giggo",
+      "subtitle": "Everything you need to turn your creativity into a career",
+      "earnings": {
+        "title": "Competitive Payouts",
+        "description": "Earn $200-$2,000+ per gig based on your skills"
+      },
+      "fast": {
+        "title": "Quick Payments",
+        "description": "Get paid within 3-5 days of approval"
+      },
+      "secure": {
+        "title": "Secure Platform",
+        "description": "Protected payments and verified brands"
+      },
+      "flexible": {
+        "title": "Work Anytime",
+        "description": "Create content on your own schedule"
+      }
+    },
+    "stories": {
+      "title": "Success",
+      "titleHighlight": "Stories",
+      "subtitle": "Real creators, real earnings",
+      "earned": "Total Earned",
+      "gigs": "Gigs Completed"
+    },
+    "portfolio": {
+      "title": "Creator",
+      "titleHighlight": "Showcase",
+      "subtitle": "See what top creators are making on Giggo"
+    },
+    "workflow": {
+      "title": "How to Get",
+      "titleHighlight": "Started",
+      "step1": { "title": "Create Profile", "description": "Sign up and connect socials" },
+      "step2": { "title": "Browse Gigs", "description": "Find brands you love" },
+      "step3": { "title": "Submit Content", "description": "Create and upload videos" },
+      "step4": { "title": "Get Paid", "description": "Receive fast payouts" }
+    },
+    "cta": {
+      "title": "Ready to Get Paid for Your Content?",
+      "subtitle": "Join thousands of creators already earning on Giggo. No experience required.",
+      "button": "Join as Creator"
+    }
+  },
+  "brief": {
+    "hook": "Hook",
+    "keySellingPoints": "Key Selling Points",
+    "callToAction": "Call to Action",
+    "description": "Brief Description",
+    "lockedMessage": "Apply to this gig to view the full brief",
+    "applyToView": "Apply to this gig to receive the full structured brief with Hook, Key Selling Points, and Call to Action."
+  },
+  "feedback": {
+    "selectIssues": "Select the issues with this submission:",
+    "lighting": "Lighting is too dark",
+    "audio": "Audio is not clear",
+    "usp": "Didn't mention the USP",
+    "duration": "Video is too short/long",
+    "quality": "Video quality is poor",
+    "hook": "Hook is not engaging",
+    "other": "Other (specify)",
+    "otherPlaceholder": "Describe the issue in detail...",
+    "dialogDescription": "Select the issues or provide detailed feedback to help the creator improve.",
+    "sendFeedback": "Send Feedback"
+  },
+  "reliability": {
+    "title": "Reliability Score",
+    "description": "This score reflects on-time delivery rate based on past completed gigs.",
+    "onTime": "On-Time"
+  }
+}
