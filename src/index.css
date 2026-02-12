@@ -14,7 +14,7 @@
    ❌ No decorative gradients
    ═══════════════════════════════════════════════════════════════ */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
 
 /* ───────────────────────────────────────────────────────────────
    CSS VARIABLES (for shadcn/ui compatibility)
@@ -61,17 +61,20 @@
     /* Radius */
     --radius: 0.5rem;
 
-    /* Landing page surfaces */
-    --landing-bg: 210 40% 98%;
-    --landing-surface: 213 27% 94%;
-    --landing-surface-alt: 210 40% 96%;
-    --landing-card: 0 0% 100%;
-    --landing-card-border: 214 20% 88%;
-    --landing-heading: 222 47% 11%;
-    --landing-body: 215 16% 47%;
-    --landing-body-muted: 215 14% 60%;
-    --landing-nav-bg: 213 27% 94%;
-    --landing-fade: 210 40% 98%;
+    /* Landing page surfaces - Dark Premium */
+    --landing-bg: 215 50% 9%;
+    --landing-surface: 214 38% 15%;
+    --landing-surface-alt: 214 44% 12%;
+    --landing-card: 214 38% 15%;
+    --landing-card-border: 0 0% 100%;
+    --landing-heading: 0 0% 100%;
+    --landing-body: 215 16% 65%;
+    --landing-body-muted: 215 16% 50%;
+    --landing-nav-bg: 215 50% 9%;
+    --landing-fade: 215 50% 9%;
+    --landing-accent: 191 100% 50%;
+    --landing-accent-hover: 191 100% 60%;
+    --landing-accent-glow: 191 100% 50%;
 
     /* Status */
     --status-success: 142 71% 45%;
@@ -171,7 +174,7 @@
 
   /* Headings */
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Space Grotesk', system-ui, sans-serif;
+    font-family: 'Plus Jakarta Sans', 'Space Grotesk', system-ui, sans-serif;
     font-weight: 700;
     letter-spacing: -0.025em;
     color: hsl(var(--foreground));
@@ -588,4 +591,23 @@
   .animate-marquee {
     animation: none;
   }
+}
+
+/* Float animation for dashboard mockup */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+/* Gradient text shift */
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Pulsing glow for CTA */
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 30px hsl(191 100% 50% / 0.3); }
+  50% { box-shadow: 0 0 50px hsl(191 100% 50% / 0.5); }
 }
