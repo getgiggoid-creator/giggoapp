@@ -12,7 +12,7 @@ const WhatsAppWidget = () => {
       >
         <MessageCircle className="w-6 h-6" />
       </a>
-      <div className="absolute bottom-full right-0 mb-2 bg-white text-[#1A1A1A] text-sm font-medium px-4 py-2 rounded-xl shadow-lg border border-[#E0E0E0] opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+      <div className="absolute bottom-full right-0 mb-2 bg-landing-surface text-white text-sm font-medium px-4 py-2 rounded-xl shadow-lg border border-white/10 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
         Ada pertanyaan? Chat kami!
       </div>
     </div>

@@ -75,6 +75,9 @@ const config: Config = {
         "landing-body-muted": "hsl(var(--landing-body-muted))",
         "landing-nav": "hsl(var(--landing-nav-bg))",
         "landing-fade": "hsl(var(--landing-fade))",
+        "landing-accent": "hsl(var(--landing-accent))",
+        "landing-accent-hover": "hsl(var(--landing-accent-hover))",
+        "landing-accent-glow": "hsl(var(--landing-accent-glow))",
 
         /* Glow colors */
         "glow-cyan": "hsl(var(--glow-cyan))",
