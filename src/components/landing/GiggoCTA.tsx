@@ -5,36 +5,62 @@ import { Button } from "@/components/ui/button";
 
 const GiggoCTA = () => {
   return (
-    <section className="py-32 bg-gradient-to-b from-landing-bg to-landing-surface relative overflow-hidden">
-      {/* Glow effects */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-[radial-gradient(circle,hsl(var(--landing-accent-glow)/0.15)_0%,transparent_70%)] pointer-events-none" />
-
-      <div className="container mx-auto px-4 max-w-[800px] relative z-10 text-center">
+    <section className="py-16 md:py-20 bg-white">
+      <div className="mx-auto px-6 max-w-[1200px]">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
+          className="relative bg-gradient-to-br from-[hsl(155,55%,32%)] to-[hsl(155,60%,22%)] rounded-[32px] overflow-hidden"
         >
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">
-            Jangan Biarkan Kompetitor Anda{"\n"}Memonopoli Feed.
-          </h2>
+          {/* Glow effect */}
+          <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[radial-gradient(circle,hsl(155,60%,50%,0.15)_0%,transparent_70%)] pointer-events-none" />
 
-          <p className="text-lg text-landing-body mb-10">
-            Dengan Gigtech setiap transaksi transparan, memimpin secara mudah pula.
-          </p>
+          <div className="relative z-10 grid lg:grid-cols-2 gap-8 items-center p-8 md:p-12 lg:p-[100px]">
+            {/* Left - Content */}
+            <div>
+              {/* App store badges */}
+              <div className="flex items-center gap-3 mb-6">
+                <div className="bg-black text-white text-[10px] font-medium px-3 py-1.5 rounded-md flex items-center gap-1.5">
+                  <svg className="w-3 h-3" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                  App Store
+                </div>
+                <div className="bg-black text-white text-[10px] font-medium px-3 py-1.5 rounded-md flex items-center gap-1.5">
+                  <svg className="w-3 h-3" viewBox="0 0 24 24" fill="currentColor"><path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.61 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/></svg>
+                  Google Play
+                </div>
+              </div>
 
-          <Button
-            asChild
-            className="h-16 px-12 text-xl font-bold rounded-lg bg-landing-accent hover:bg-landing-accent-hover text-landing-bg shadow-[0_0_40px_hsl(var(--landing-accent-glow)/0.4)] hover:scale-105 transition-all animate-[pulse-glow_2s_ease-in-out_infinite]"
-          >
-            <Link to="/auth?mode=register&role=brand" className="flex items-center gap-2">
-              BUAT CAMPAIGN PERTAMA (GRATIS POSTING) <ArrowRight className="w-6 h-6" />
-            </Link>
-          </Button>
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-tight mb-4">
+                Start Earning From Your Content Today With GIGGO!
+              </h2>
+              <p className="text-sm md:text-base text-white/70 mb-8 leading-relaxed">
+                Apply To Jobs Today And Get Paid Hourly.
+              </p>
 
-          <p className="text-xs text-landing-body-muted mt-6">
-            *No credit card required. Campaign review gratis dari tim kami.
-          </p>
+              <Button
+                asChild
+                className="h-12 px-8 text-sm font-semibold rounded-full bg-white text-[hsl(155,60%,30%)] hover:bg-white/90 shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all"
+              >
+                <Link to="/auth?mode=register&role=brand" className="flex items-center gap-2">
+                  Get Started For Free <ArrowRight className="w-4 h-4" />
+                </Link>
+              </Button>
+            </div>
+
+            {/* Right - Phone */}
+            <div className="relative flex justify-center lg:justify-end">
+              <div className="w-[200px] md:w-[240px] bg-black rounded-[30px] p-2 shadow-[0_20px_60px_rgba(0,0,0,0.3)] rotate-[8deg]">
+                <div className="bg-gradient-to-br from-[hsl(155,40%,85%)] to-[hsl(155,30%,75%)] rounded-[24px] aspect-[9/16] flex items-center justify-center">
+                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[hsl(155,60%,38%)] to-[hsl(155,60%,30%)] flex items-center justify-center shadow-lg">
+                    <span className="text-white font-bold text-xl">G</span>
+                  </div>
+                </div>
+              </div>
+              {/* Glow behind phone */}
+              <div className="absolute inset-0 bg-[radial-gradient(circle,hsl(155,60%,50%,0.2)_0%,transparent_60%)] blur-2xl pointer-events-none" />
+            </div>
+          </div>
         </motion.div>
       </div>
     </section>
