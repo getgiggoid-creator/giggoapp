@@ -35,7 +35,6 @@ const Privacy = lazy(() => import("@/pages/legal/Privacy"));
 const Terms = lazy(() => import("@/pages/legal/Terms"));
 const PublicCreatorProfile = lazy(() => import("@/pages/creators/PublicProfile"));
 const AdminCreatorManagement = lazy(() => import("@/pages/admin/CreatorManagement"));
-const Octopilot = lazy(() => import("@/pages/Octopilot"));
 
 // Guards
 import AdminGuard from "@/components/admin/AdminGuard";
@@ -74,7 +73,6 @@ const App = () => (
                 <Routes>
                   {/* Landing page (own nav/footer) */}
                   <Route path="/" element={<Index />} />
-                  <Route path="/octopilot" element={<Octopilot />} />
 
                   {/* Public Routes (with shared Navbar & Footer) */}
                   <Route element={<IndexLayout />}>
