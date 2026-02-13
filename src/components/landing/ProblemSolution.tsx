@@ -1,57 +1,83 @@
 import { motion } from "framer-motion";
-import { Hourglass, FolderOpen, Package } from "lucide-react";
+import { ChevronDown } from "lucide-react";
+import { useState } from "react";
 
-const problems = [
+const faqs = [
   {
-    icon: Hourglass,
-    title: "The Dino-Era Time-Sink",
-    desc: "Planning, diskusi, dan persetujuan untuk satu Campaign bisa memakan waktu 2-4 minggu. Manual, lama, dan tidak scalable.",
+    q: "Free Products",
+    desc: "Companies Selling Physical Products Send Free Samples To Creators On GIGGO. You Create Content For These Brands While Getting Paid Hourly. And Many Creators Receive Dozens Of Free Products They Genuinely Love.",
   },
   {
-    icon: FolderOpen,
-    title: "The Operational Nightmare",
-    desc: "Contract chaos and confusion. Managing 10+ creators = 10+ different terms, payments, dan tracking spreadsheets.",
+    q: "Extra Earnings",
+    desc: "The More You Work, The More You Can Earn. Many Brands Offer Bonus Opportunities And Performance-Based Additional Pay.",
   },
   {
-    icon: Package,
-    title: "The ROI Blackbox",
-    desc: 'Sebagian besar brands tidak tahu data siapa spends bisa untuk hasil yang terpercaya. Hasilnya ya, ini tidak terukur lah..',
+    q: "For Both Experienced And Inexperienced Creators",
+    desc: "GIGGO Offers A Wide Range Of Jobs, Most With Little To No Experience Required. Prior Experience Can Help You Stand Out, But It's Never Required To Get Started.",
   },
 ];
 
 const ProblemSolution = () => {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
   return (
-    <section className="py-32 bg-landing-bg relative" id="problems">
-      <div className="container mx-auto px-4 max-w-7xl">
-        <div className="text-center mb-16">
+    <section className="py-20 md:py-[120px] bg-white" id="faq">
+      <div className="mx-auto px-6 max-w-[800px]">
+        {/* Header */}
+        <div className="text-center mb-4">
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-sm font-medium text-[hsl(155,60%,38%)] mb-3"
+          >
+            FAQ
+          </motion.p>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-[40px] font-bold text-white leading-tight mb-4"
+            className="text-3xl md:text-[40px] font-semibold text-[hsl(0,0%,10%)] leading-[1.2] mb-3"
           >
-            Sejujurnya: Influencer Marketing{"\n"}Manual Itu Tidak Skalabel.
+            Creator <span className="text-[hsl(155,60%,38%)]">Perks?</span>
           </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-sm text-[hsl(0,0%,50%)] max-w-[480px] mx-auto"
+          >
+            Not Only Do You Get Paid By The Hour, But Brands Will Send You Tons Of Free Products Just For Working With Them.
+          </motion.p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {problems.map((p, i) => (
+        {/* FAQ Accordion */}
+        <div className="space-y-4 mt-10">
+          {faqs.map((faq, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.15 }}
-              className="group bg-landing-surface/70 backdrop-blur-xl border border-white/10 rounded-2xl p-8 hover:-translate-y-2 hover:shadow-[0_20px_60px_hsl(var(--landing-accent-glow)/0.1)] transition-all duration-300"
+              transition={{ delay: i * 0.1 }}
+              className="bg-white rounded-2xl border border-black/5 shadow-[0_2px_8px_rgba(0,0,0,0.04)] overflow-hidden"
             >
-              <div className="relative mb-6">
-                <p.icon className="w-12 h-12 text-[#EF4444] stroke-[1.5]" />
-                <div className="absolute inset-0 w-12 h-12 bg-[#EF4444]/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity" />
+              <button
+                onClick={() => setOpenIndex(openIndex === i ? null : i)}
+                className="w-full flex items-center justify-between px-6 py-5 text-left"
+              >
+                <h3 className="text-base font-semibold text-[hsl(0,0%,10%)]">{faq.q}</h3>
+                <ChevronDown
+                  className={`w-5 h-5 text-[hsl(155,60%,38%)] transition-transform duration-300 flex-shrink-0 ${openIndex === i ? 'rotate-180' : ''}`}
+                />
+              </button>
+              <div
+                className={`overflow-hidden transition-all duration-300 ${openIndex === i ? 'max-h-[300px] opacity-100' : 'max-h-0 opacity-0'}`}
+              >
+                <p className="px-6 pb-5 text-sm text-[hsl(0,0%,50%)] leading-relaxed">
+                  {faq.desc}
+                </p>
               </div>
-              <h3 className="text-xl md:text-[28px] font-semibold text-white mb-4 leading-tight">
-                {p.title}
-              </h3>
-              <p className="text-landing-body leading-relaxed">{p.desc}</p>
             </motion.div>
           ))}
         </div>
