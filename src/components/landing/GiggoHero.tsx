@@ -1,101 +1,198 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
-
-const creatorCards = [
-  { name: "Sarah K.", niche: "Beauty", rotation: "-3deg" },
-  { name: "Rizky A.", niche: "Food", rotation: "2deg" },
-  { name: "Maya R.", niche: "Fashion", rotation: "-1deg" },
-  { name: "Dani P.", niche: "Tech", rotation: "3deg" },
-  { name: "Lisa W.", niche: "Lifestyle", rotation: "-2deg" },
-];
+import { CheckCircle } from "lucide-react";
 
 const GiggoHero = () => {
   const fadeUp = {
-    initial: { opacity: 0, y: 24 },
+    initial: { opacity: 0, y: 30 },
     animate: { opacity: 1, y: 0 },
   };
 
   return (
-    <section className="relative min-h-screen flex items-center bg-white overflow-hidden pt-20">
-      <div className="mx-auto px-6 max-w-[1200px] w-full relative z-10 py-16 lg:py-0">
-        <div className="text-center max-w-[800px] mx-auto">
-          {/* App store badges */}
-          <motion.div
-            className="flex items-center justify-center gap-3 mb-8"
-            {...fadeUp}
-            transition={{ duration: 0.6, delay: 0.1 }}
-          >
-            <div className="bg-black text-white text-xs font-medium px-3 py-1.5 rounded-md flex items-center gap-1.5">
-              <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-              App Store
-            </div>
-            <div className="bg-black text-white text-xs font-medium px-3 py-1.5 rounded-md flex items-center gap-1.5">
-              <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.61 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/></svg>
-              Google Play
-            </div>
-          </motion.div>
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-[#0A1628] pt-[72px]">
+      {/* Background glow effects */}
+      <div
+        className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] pointer-events-none"
+        style={{
+          background: "radial-gradient(circle, rgba(0,217,255,0.3) 0%, transparent 70%)",
+          filter: "blur(48px)",
+          opacity: 0.3,
+        }}
+      />
+      <div
+        className="absolute top-1/4 right-0 w-[600px] h-[600px] pointer-events-none"
+        style={{
+          background: "radial-gradient(circle, rgba(0,217,255,0.15) 0%, transparent 70%)",
+          animation: "float 6s ease-in-out infinite",
+        }}
+      />
 
-          {/* Headline */}
-          <motion.h1
-            className="text-4xl sm:text-5xl lg:text-[56px] font-bold leading-[1.15] text-[hsl(0,0%,10%)] mb-6"
-            {...fadeUp}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            Now <span className="text-[hsl(155,60%,38%)]">Followers?</span>
-            <br />
-            No Problem!
-          </motion.h1>
-
-          {/* Subtitle */}
-          <motion.p
-            className="text-lg text-[hsl(0,0%,40%)] leading-relaxed mb-8 max-w-[520px] mx-auto"
-            {...fadeUp}
-            transition={{ duration: 0.6, delay: 0.3 }}
-          >
-            Brands Need REAL People, Not Just Influencers. Earn By The Hour Shooting Authentic Content At Home.
-          </motion.p>
-
-          {/* CTA Button */}
-          <motion.div
-            className="mb-16"
-            {...fadeUp}
-            transition={{ duration: 0.6, delay: 0.4 }}
-          >
-            <Button
-              asChild
-              className="h-12 px-8 text-base font-semibold rounded-full bg-gradient-to-r from-[hsl(155,60%,38%)] to-[hsl(155,60%,30%)] hover:from-[hsl(155,60%,32%)] hover:to-[hsl(155,60%,25%)] text-white shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all"
+      <div className="mx-auto px-6 max-w-[1280px] w-full relative z-10 py-16 lg:py-24">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-12 items-center">
+          {/* Left column - Content */}
+          <div>
+            {/* Live badge */}
+            <motion.div
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 mb-6"
+              style={{ background: "rgba(26, 35, 50, 0.7)", backdropFilter: "blur(10px)" }}
+              {...fadeUp}
+              transition={{ duration: 0.6, delay: 0.1 }}
             >
-              <Link to="/auth?mode=register&role=creator" className="flex items-center gap-2">
-                Get Started Free <ArrowRight className="w-4 h-4" />
-              </Link>
-            </Button>
-          </motion.div>
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full rounded-full bg-[#00D9FF] opacity-75" style={{ animation: "ping 2s infinite" }} />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#00D9FF]" style={{ animation: "pulse-dot 2s infinite" }} />
+              </span>
+              <span className="text-sm font-medium text-white">LIVE DATA: 1,250+ Active Creators</span>
+            </motion.div>
 
-          {/* Creator cards row */}
-          <motion.div
-            className="flex items-center justify-center gap-3 overflow-x-auto scrollbar-hide pb-4"
-            {...fadeUp}
-            transition={{ duration: 0.6, delay: 0.5 }}
-          >
-            {creatorCards.map((card) => (
-              <div
-                key={card.name}
-                className="flex-shrink-0 w-[100px] sm:w-[120px] rounded-2xl overflow-hidden bg-[hsl(150,25%,97%)] border border-black/5 shadow-[0_10px_30px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.1)] hover:-translate-y-1 transition-all duration-300"
-                style={{ transform: `rotate(${card.rotation})` }}
+            {/* Headline */}
+            <motion.h1
+              className="text-[32px] sm:text-[40px] lg:text-[56px] font-bold leading-[1.2] text-white mb-6"
+              style={{ letterSpacing: "-0.02em" }}
+              {...fadeUp}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              Ubah Ratusan{"\n"}
+              Pelanggan Menjadi{"\n"}
+              <span
+                className="inline-block"
+                style={{
+                  background: "linear-gradient(45deg, #00D9FF 0%, #00A8CC 25%, #0077B6 50%, #00D9FF 100%)",
+                  backgroundSize: "300% 300%",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                  animation: "gradient-shift 8s ease infinite",
+                }}
               >
-                <div className="aspect-[3/4] bg-gradient-to-br from-[hsl(155,30%,90%)] to-[hsl(155,20%,85%)] flex items-center justify-center">
-                  <div className="w-10 h-10 rounded-full bg-[hsl(155,60%,38%)]/20 flex items-center justify-center">
-                    <span className="text-xs font-bold text-[hsl(155,60%,38%)]">{card.name[0]}</span>
+                Marketing Force Anda.
+              </span>
+            </motion.h1>
+
+            {/* Subtitle */}
+            <motion.p
+              className="text-base lg:text-lg text-[#94A3B8] leading-[1.6] mb-8 max-w-[600px]"
+              {...fadeUp}
+              transition={{ duration: 0.6, delay: 0.3 }}
+            >
+              Ubah dari konvensional ke arah yang lebih cerdas. Giggo Membantu marketing force untuk mem-scale kanal Anda atas konten di TikTok.
+            </motion.p>
+
+            {/* CTA Buttons */}
+            <motion.div
+              className="flex flex-col sm:flex-row gap-4 mb-8"
+              {...fadeUp}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
+              <Link
+                to="/auth?mode=register&role=brand"
+                className="group inline-flex items-center justify-center gap-2 px-8 py-4 text-base lg:text-lg font-semibold text-[#0A1628] bg-[#00D9FF] rounded-lg hover:-translate-y-0.5 hover:shadow-[0_0_40px_rgba(0,217,255,0.4),0_10px_30px_rgba(0,0,0,0.3)] transition-all duration-300"
+              >
+                Buat Campaign
+                <span className="inline-block group-hover:translate-x-1 transition-transform duration-300">→</span>
+              </Link>
+              <Link
+                to="/auth?mode=register&role=creator"
+                className="inline-flex items-center justify-center px-8 py-4 text-base lg:text-lg font-semibold text-[#00D9FF] border border-[#00D9FF] rounded-lg hover:bg-[#00D9FF]/10 transition-all duration-300"
+              >
+                Buat Campaign Kreator
+              </Link>
+            </motion.div>
+
+            {/* Trust signals */}
+            <motion.div
+              className="flex flex-wrap gap-6"
+              {...fadeUp}
+              transition={{ duration: 0.6, delay: 0.5 }}
+            >
+              <span className="flex items-center gap-2 text-sm text-[#94A3B8]">
+                <CheckCircle className="w-5 h-5 text-[#10B981]" />
+                No credit card required
+              </span>
+              <span className="flex items-center gap-2 text-sm text-[#94A3B8]">
+                <CheckCircle className="w-5 h-5 text-[#10B981]" />
+                Campaign review gratis
+              </span>
+            </motion.div>
+          </div>
+
+          {/* Right column - Dashboard visual */}
+          <motion.div
+            className="relative lg:block"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+          >
+            {/* Glow effects */}
+            <div
+              className="absolute -inset-4 pointer-events-none"
+              style={{
+                background: "radial-gradient(circle, rgba(0,217,255,0.4) 0%, transparent 70%)",
+                filter: "blur(48px)",
+              }}
+            />
+            <div
+              className="absolute top-1/2 left-1/2 w-full h-full pointer-events-none"
+              style={{
+                transform: "translate(-50%, -50%)",
+                background: "radial-gradient(circle, rgba(0,217,255,0.2) 0%, transparent 70%)",
+                filter: "blur(24px)",
+                animation: "pulse-slow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+              }}
+            />
+
+            {/* Glass card container */}
+            <div
+              className="relative z-10 p-4 rounded-2xl border border-white/10"
+              style={{
+                background: "rgba(26, 35, 50, 0.7)",
+                backdropFilter: "blur(10px)",
+                boxShadow: "0 0 60px rgba(0,217,255,0.4), 0 20px 40px rgba(0,0,0,0.3)",
+                animation: "float 3s ease-in-out infinite",
+              }}
+            >
+              {/* Dashboard mockup */}
+              <div className="rounded-xl bg-[#1A2332] aspect-video flex flex-col p-6 gap-4">
+                {/* Top bar */}
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <div className="w-6 h-6 rounded bg-[#00D9FF]/20 flex items-center justify-center">
+                      <span className="text-[10px] font-bold text-[#00D9FF]">G</span>
+                    </div>
+                    <span className="text-xs font-semibold text-white">Dashboard</span>
+                  </div>
+                  <div className="flex gap-1.5">
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#EF4444]" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#FBBF24]" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#10B981]" />
                   </div>
                 </div>
-                <div className="p-2 text-center">
-                  <p className="text-[10px] font-semibold text-[hsl(0,0%,10%)] truncate">{card.name}</p>
-                  <p className="text-[9px] text-[hsl(0,0%,55%)]">{card.niche}</p>
+
+                {/* Stats row */}
+                <div className="grid grid-cols-3 gap-3">
+                  {[
+                    { label: "Active Campaigns", value: "12" },
+                    { label: "Total Creators", value: "248" },
+                    { label: "Avg ROAS", value: "3.5x" },
+                  ].map((stat) => (
+                    <div key={stat.label} className="bg-[#0A1628]/60 rounded-lg p-3 border border-white/5">
+                      <p className="text-[10px] text-[#94A3B8] mb-1">{stat.label}</p>
+                      <p className="text-lg font-bold text-[#00D9FF]">{stat.value}</p>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Content rows */}
+                <div className="flex-1 space-y-2">
+                  {["Beauty Campaign — 24 creators", "Tech Review — 12 creators", "Fashion Lookbook — 18 creators"].map((item, i) => (
+                    <div key={i} className="flex items-center justify-between bg-[#0A1628]/40 rounded-lg px-3 py-2 border border-white/5">
+                      <span className="text-[11px] text-[#94A3B8]">{item}</span>
+                      <span className="text-[10px] font-semibold text-[#10B981]">Active</span>
+                    </div>
+                  ))}
                 </div>
               </div>
-            ))}
+            </div>
           </motion.div>
         </div>
       </div>

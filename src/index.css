@@ -27,7 +27,7 @@
     --secondary: 0 0% 96%;
     --secondary-foreground: 0 0% 10%;
 
-    /* Brand Green */
+    /* Brand */
     --primary: 155 60% 38%;
     --primary-foreground: 0 0% 100%;
     --accent: 155 60% 38%;
@@ -44,28 +44,31 @@
 
     --radius: 0.5rem;
 
-    /* Landing page tokens - Clean Green */
-    --landing-bg: 0 0% 100%;
-    --landing-bg-alt: 150 25% 97%;
-    --landing-surface: 0 0% 100%;
-    --landing-surface-alt: 150 25% 97%;
-    --landing-card: 0 0% 100%;
-    --landing-card-border: 0 0% 88%;
-    --landing-heading: 0 0% 10%;
-    --landing-body: 0 0% 40%;
-    --landing-body-muted: 0 0% 55%;
-    --landing-nav-bg: 0 0% 100%;
-    --landing-fade: 0 0% 100%;
-    --landing-accent: 155 60% 38%;
-    --landing-accent-hover: 155 60% 32%;
-    --landing-accent-glow: 155 60% 38%;
+    /* Landing page - Dark Premium Orchid Theme */
+    --landing-bg: 214 67% 7%;
+    --landing-bg-alt: 213 33% 16%;
+    --landing-surface: 213 33% 16%;
+    --landing-surface-glass: 213 33% 16%;
+    --landing-card: 213 33% 16%;
+    --landing-card-border: 0 0% 100%;
+    --landing-heading: 0 0% 100%;
+    --landing-body: 215 20% 65%;
+    --landing-body-muted: 215 20% 55%;
+    --landing-nav-bg: 214 67% 7%;
+    --landing-fade: 214 67% 7%;
+    --landing-accent: 191 100% 50%;
+    --landing-accent-hover: 191 100% 60%;
+    --landing-accent-glow: 191 100% 50%;
+    --landing-accent-dark: 214 67% 7%;
+    --landing-success: 160 84% 39%;
+    --landing-error: 0 84% 60%;
 
     /* Status */
     --status-success: 155 60% 38%;
     --status-error: 0 84% 60%;
     --status-warning: 38 92% 50%;
 
-    --glow-cyan: 155 60% 38%;
+    --glow-cyan: 191 100% 50%;
     --glow-magenta: 325 100% 59%;
   }
 
@@ -93,24 +96,10 @@
     --input: 0 0% 15%;
     --ring: 155 60% 45%;
     --radius: 0.5rem;
-    --landing-bg: 0 0% 4%;
-    --landing-bg-alt: 0 0% 7%;
-    --landing-surface: 0 0% 7%;
-    --landing-surface-alt: 0 0% 10%;
-    --landing-card: 0 0% 7%;
-    --landing-card-border: 0 0% 15%;
-    --landing-heading: 0 0% 95%;
-    --landing-body: 0 0% 60%;
-    --landing-body-muted: 0 0% 45%;
-    --landing-nav-bg: 0 0% 7%;
-    --landing-fade: 0 0% 4%;
-    --landing-accent: 155 60% 45%;
-    --landing-accent-hover: 155 60% 55%;
-    --landing-accent-glow: 155 60% 45%;
     --status-success: 155 60% 45%;
     --status-error: 0 84% 60%;
     --status-warning: 38 92% 50%;
-    --glow-cyan: 155 60% 45%;
+    --glow-cyan: 191 100% 50%;
     --glow-magenta: 325 100% 59%;
   }
 }
@@ -295,8 +284,28 @@
 }
 
 @keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 20px hsl(155 60% 38% / 0.2); }
-  50% { box-shadow: 0 0 40px hsl(155 60% 38% / 0.35); }
+  0%, 100% { box-shadow: 0 0 20px hsl(var(--glow-cyan) / 0.2); }
+  50% { box-shadow: 0 0 40px hsl(var(--glow-cyan) / 0.35); }
+}
+
+@keyframes ping {
+  0% { transform: scale(1); opacity: 0.75; }
+  100% { transform: scale(2); opacity: 0; }
+}
+
+@keyframes pulse-dot {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.2); opacity: 0.5; }
+}
+
+@keyframes scroll-x {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+  50% { opacity: 0.5; transform: translate(-50%, -50%) scale(1.05); }
 }
 
 @media (prefers-reduced-motion: reduce) {
