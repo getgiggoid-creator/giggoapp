@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { ChevronDown, MessageCircle } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { useState } from "react";
 
 const faqs = [
@@ -34,21 +33,22 @@ const GiggoFAQ = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section className="py-20 md:py-[120px] bg-white" id="faq-general">
+    <section className="py-20 md:py-32 bg-[#0A1628]" id="faq">
       <div className="mx-auto px-6 max-w-[800px]">
-        <div className="text-center mb-12">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-3xl md:text-[40px] font-semibold text-[hsl(0,0%,10%)] mb-4"
-          >
+        <motion.div
+          className="text-center mb-12"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <h2 className="text-[28px] sm:text-[32px] lg:text-[40px] font-bold text-white mb-4">
             Pertanyaan yang Sering Ditanyakan
-          </motion.h2>
-          <p className="text-base text-[hsl(0,0%,50%)]">
+          </h2>
+          <p className="text-base text-[#94A3B8]">
             Semua yang perlu Anda tahu tentang Giggo
           </p>
-        </div>
+        </motion.div>
 
         <div className="space-y-4">
           {faqs.map((faq, i) => (
@@ -58,23 +58,22 @@ const GiggoFAQ = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.05 }}
-              className="bg-white rounded-2xl border border-black/5 shadow-[0_2px_8px_rgba(0,0,0,0.04)] overflow-hidden"
+              className="rounded-2xl border border-white/10 overflow-hidden"
+              style={{ background: "rgba(26, 35, 50, 0.7)", backdropFilter: "blur(10px)" }}
             >
               <button
                 onClick={() => setOpenIndex(openIndex === i ? null : i)}
                 className="w-full flex items-center justify-between px-6 py-5 text-left"
               >
-                <h3 className="text-sm md:text-base font-semibold text-[hsl(0,0%,10%)] pr-4">{faq.q}</h3>
+                <h3 className="text-sm md:text-base font-semibold text-white pr-4">{faq.q}</h3>
                 <ChevronDown
-                  className={`w-5 h-5 text-[hsl(155,60%,38%)] transition-transform duration-300 flex-shrink-0 ${openIndex === i ? 'rotate-180' : ''}`}
+                  className={`w-5 h-5 text-[#00D9FF] transition-transform duration-300 flex-shrink-0 ${openIndex === i ? "rotate-180" : ""}`}
                 />
               </button>
               <div
-                className={`overflow-hidden transition-all duration-300 ${openIndex === i ? 'max-h-[400px] opacity-100' : 'max-h-0 opacity-0'}`}
+                className={`overflow-hidden transition-all duration-300 ${openIndex === i ? "max-h-[400px] opacity-100" : "max-h-0 opacity-0"}`}
               >
-                <p className="px-6 pb-5 text-sm text-[hsl(0,0%,50%)] leading-relaxed">
-                  {faq.a}
-                </p>
+                <p className="px-6 pb-5 text-sm text-[#94A3B8] leading-relaxed">{faq.a}</p>
               </div>
             </motion.div>
           ))}
@@ -86,24 +85,17 @@ const GiggoFAQ = () => {
           viewport={{ once: true }}
           className="text-center mt-12"
         >
-          <p className="text-lg font-semibold text-[hsl(0,0%,10%)] mb-2">Masih Ada Pertanyaan?</p>
-          <p className="text-[hsl(0,0%,50%)] mb-6">
-            Tim support kami siap membantu Anda via WhatsApp
-          </p>
-          <Button
-            asChild
-            className="h-12 px-8 rounded-full bg-[#25D366] hover:bg-[#25D366]/90 text-white font-bold"
+          <p className="text-lg font-semibold text-white mb-2">Masih Ada Pertanyaan?</p>
+          <p className="text-[#94A3B8] mb-6">Tim support kami siap membantu Anda via WhatsApp</p>
+          <a
+            href="https://wa.me/6281234567890"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-8 py-3 rounded-lg bg-[#25D366] text-white font-bold hover:-translate-y-0.5 transition-all duration-300"
           >
-            <a
-              href="https://wa.me/6281234567890"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2"
-            >
-              <MessageCircle className="w-5 h-5" />
-              Chat via WhatsApp
-            </a>
-          </Button>
+            <MessageCircle className="w-5 h-5" />
+            Chat via WhatsApp
+          </a>
         </motion.div>
       </div>
     </section>
