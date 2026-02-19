@@ -1,211 +1,296 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { Link } from "react-router-dom";
+import { useForm, FormProvider } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
+import { motion, AnimatePresence } from "framer-motion";
+import { ArrowLeft, ArrowRight, Save, Rocket, Loader2, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
-import { 
-  ArrowLeft, 
-  Zap, 
-  Upload, 
-  Calendar, 
-  DollarSign, 
-  Users, 
-  ChevronRight,
-  Info,
-  Loader2
-} from "lucide-react";
 import { useCreateCampaign, CampaignType, CampaignStatus } from "@/hooks/useCampaigns";
 
-const categories = [
-  "Fashion", "Beauty", "Fitness", "Tech", "Food", "Travel", 
-  "Lifestyle", "Gaming", "Music", "Sports", "Education", "Entertainment"
+
+import WizardStepBasics from "@/components/campaigns/wizard/WizardStepBasics";
+import WizardStepAudience from "@/components/campaigns/wizard/WizardStepAudience";
+import WizardStepBrief from "@/components/campaigns/wizard/WizardStepBrief";
+import WizardStepReview from "@/components/campaigns/wizard/WizardStepReview";
+
+// ── Zod Schema ──
+const campaignSchema = z.object({
+  // Step 1
+  title: z.string().min(3, "Title must be at least 3 characters").max(120),
+  campaignType: z.string().min(1, "Select a campaign type"),
+  objectives: z.array(z.string()).min(1, "Select at least one objective"),
+  description: z.string().min(10, "Description must be at least 10 characters").max(2000),
+  // Step 2
+  niches: z.array(z.string()).min(1, "Select at least one niche"),
+  ageRange: z.array(z.number()).length(2).default([18, 45]),
+  gender: z.string().default("all"),
+  location: z.string().default("all"),
+  creatorTier: z.string().default("nano"),
+  minFollowers: z.number().min(0).default(1000),
+  // Step 3
+  productName: z.string().min(1, "Product name is required"),
+  productLink: z.string().url("Enter a valid URL").or(z.literal("")),
+  keyMessages: z.array(z.string()).default([]),
+  mandatoryElements: z.array(z.string()).default([]),
+  dos: z.array(z.string()).default([]),
+  donts: z.array(z.string()).default([]),
+  referenceLinks: z.array(z.string()).default([]),
+  // Step 4
+  budgetPerCreator: z.number().min(100000, "Minimum Rp 100.000"),
+  creatorsNeeded: z.number().min(1, "At least 1 creator").max(500),
+  startDate: z.string().min(1, "Start date required"),
+  endDate: z.string().min(1, "End date required"),
+  submissionDeadline: z.string().min(1, "Deadline required"),
+});
+
+export type CampaignFormData = z.infer<typeof campaignSchema>;
+
+const STEPS = [
+  { label: "Campaign Basics", shortLabel: "Basics" },
+  { label: "Audience & Requirements", shortLabel: "Audience" },
+  { label: "Creative Brief", shortLabel: "Brief" },
+  { label: "Budget & Review", shortLabel: "Review" },
 ];
 
-const CreateCampaign = () => {
-  const [step, setStep] = useState(1);
-  const [campaignType, setCampaignType] = useState<CampaignType | null>(null);
-  const [formData, setFormData] = useState({
-    title: "",
-    category: "",
-    description: "",
-    brief: "",
-    budget: "",
-    prizeBreakdown: "",
-    startDate: "",
-    endDate: "",
-    requirements: "",
-  });
+const stepFields: Record<number, (keyof CampaignFormData)[]> = {
+  0: ["title", "campaignType", "objectives", "description"],
+  1: ["niches", "creatorTier"],
+  2: ["productName"],
+  3: ["budgetPerCreator", "creatorsNeeded", "startDate", "endDate", "submissionDeadline"],
+};
 
+const CreateCampaign = () => {
+  const [step, setStep] = useState(0);
+  
   const createCampaign = useCreateCampaign();
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    if (!campaignType) return;
+  const methods = useForm<CampaignFormData>({
+    resolver: zodResolver(campaignSchema),
+    mode: "onChange",
+    defaultValues: {
+      title: "",
+      campaignType: "",
+      objectives: [],
+      description: "",
+      niches: [],
+      ageRange: [18, 45],
+      gender: "all",
+      location: "all",
+      creatorTier: "nano",
+      minFollowers: 1000,
+      productName: "",
+      productLink: "",
+      keyMessages: [],
+      mandatoryElements: [],
+      dos: [],
+      donts: [],
+      referenceLinks: [],
+      budgetPerCreator: 500000,
+      creatorsNeeded: 5,
+      startDate: "",
+      endDate: "",
+      submissionDeadline: "",
+    },
+  });
 
-    // Parse prize breakdown if it's a contest
-    let prizeBreakdownParsed: { rank: number; amount: number; label: string }[] = [];
-    if (campaignType === "contest" && formData.prizeBreakdown) {
-      // Simple parsing: "1st: $2500, 2nd: $1500, 3rd: $1000"
-      const parts = formData.prizeBreakdown.split(",").map(p => p.trim());
-      prizeBreakdownParsed = parts.map((part, idx) => {
-        const match = part.match(/\$?(\d+)/);
-        const amount = match ? parseInt(match[1]) : 0;
-        return {
-          rank: idx + 1,
-          amount,
-          label: `${idx + 1}${idx === 0 ? 'st' : idx === 1 ? 'nd' : idx === 2 ? 'rd' : 'th'} Place`
-        };
-      }).filter(p => p.amount > 0);
+  const nextStep = useCallback(async () => {
+    const fields = stepFields[step];
+    if (fields) {
+      const valid = await methods.trigger(fields);
+      if (!valid) return;
     }
+    setStep((s) => Math.min(s + 1, 3));
+  }, [step, methods]);
 
+  const prevStep = useCallback(() => setStep((s) => Math.max(s - 1, 0)), []);
+
+  const handleSaveDraft = async () => {
+    const values = methods.getValues();
     createCampaign.mutate({
-      title: formData.title,
-      description: formData.description,
-      brief: formData.brief || undefined,
-      category: formData.category,
-      type: campaignType as CampaignType,
-      budget: parseFloat(formData.budget) || 0,
-      prize_breakdown: prizeBreakdownParsed.length > 0 ? prizeBreakdownParsed : undefined,
-      start_date: formData.startDate ? new Date(formData.startDate).toISOString() : new Date().toISOString(),
-      end_date: formData.endDate ? new Date(formData.endDate).toISOString() : new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString(),
+      title: values.title || "Untitled Campaign",
+      description: values.description || "Draft campaign",
+      brief: JSON.stringify({
+        productName: values.productName,
+        productLink: values.productLink,
+        keyMessages: values.keyMessages,
+        mandatoryElements: values.mandatoryElements,
+        dos: values.dos,
+        donts: values.donts,
+        referenceLinks: values.referenceLinks,
+      }),
+      category: values.niches?.[0] || "Lifestyle",
+      type: CampaignType.DEAL,
+      budget: (values.budgetPerCreator || 500000) * (values.creatorsNeeded || 1),
+      start_date: values.startDate ? new Date(values.startDate).toISOString() : new Date().toISOString(),
+      end_date: values.endDate ? new Date(values.endDate).toISOString() : new Date(Date.now() + 30 * 86400000).toISOString(),
       status: CampaignStatus.DRAFT,
     });
   };
 
+  const handlePublish = methods.handleSubmit((values) => {
+    createCampaign.mutate({
+      title: values.title,
+      description: values.description,
+      brief: JSON.stringify({
+        productName: values.productName,
+        productLink: values.productLink,
+        keyMessages: values.keyMessages,
+        mandatoryElements: values.mandatoryElements,
+        dos: values.dos,
+        donts: values.donts,
+        referenceLinks: values.referenceLinks,
+        campaignType: values.campaignType,
+        objectives: values.objectives,
+        creatorTier: values.creatorTier,
+        minFollowers: values.minFollowers,
+        ageRange: values.ageRange,
+        gender: values.gender,
+        location: values.location,
+      }),
+      category: values.niches[0] || "Lifestyle",
+      type: CampaignType.DEAL,
+      budget: values.budgetPerCreator * values.creatorsNeeded,
+      start_date: new Date(values.startDate).toISOString(),
+      end_date: new Date(values.endDate).toISOString(),
+      status: CampaignStatus.LIVE,
+    });
+  });
+
+  const progress = ((step + 1) / STEPS.length) * 100;
+
   return (
-    <div className="min-h-screen bg-muted">
-      <header className="bg-card border-b border-border">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-4">
-            <Link to="/dashboard/brand" className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors">
-              <ArrowLeft className="w-5 h-5" />
-              Back
+    <div className="min-h-screen bg-zinc-950">
+      {/* Header */}
+      <header className="sticky top-0 z-40 bg-zinc-950/80 backdrop-blur-xl border-b border-zinc-800/50">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <Link
+              to="/dashboard/brand"
+              className="flex items-center gap-1.5 text-zinc-400 hover:text-zinc-100 transition-colors text-sm"
+            >
+              <ArrowLeft className="w-4 h-4" />
+              <span className="hidden sm:inline">Dashboard</span>
             </Link>
-            <div className="h-6 w-px bg-border" />
+            <div className="h-5 w-px bg-zinc-800" />
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 gradient-primary rounded-lg flex items-center justify-center">
-                <Zap className="w-4 h-4 text-primary-foreground" />
+              <div className="w-7 h-7 rounded-lg bg-amber-500/20 flex items-center justify-center">
+                <Zap className="w-3.5 h-3.5 text-amber-500" />
               </div>
-              <span className="font-display font-bold text-foreground">Create Gig</span>
+              <span className="font-semibold text-zinc-100 text-sm">New Campaign</span>
             </div>
           </div>
-          <div className="flex items-center gap-2 text-sm text-muted-foreground">
-            <span className={step >= 1 ? "text-primary font-medium" : ""}>Type</span>
-            <ChevronRight className="w-4 h-4" />
-            <span className={step >= 2 ? "text-primary font-medium" : ""}>Details</span>
-            <ChevronRight className="w-4 h-4" />
-            <span className={step >= 3 ? "text-primary font-medium" : ""}>Payout</span>
-            <ChevronRight className="w-4 h-4" />
-            <span className={step >= 4 ? "text-primary font-medium" : ""}>Review</span>
+
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={handleSaveDraft}
+            disabled={createCampaign.isPending}
+            className="border-zinc-700 text-zinc-300 hover:text-zinc-100 hover:bg-zinc-800 text-xs"
+          >
+            <Save className="w-3.5 h-3.5 mr-1.5" />
+            Save Draft
+          </Button>
+        </div>
+
+        {/* Progress Bar */}
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 pb-3">
+          <div className="flex items-center gap-2 mb-2">
+            {STEPS.map((s, i) => (
+              <button
+                key={i}
+                onClick={() => i < step && setStep(i)}
+                className={`text-xs font-medium transition-colors ${
+                  i === step
+                    ? "text-amber-500"
+                    : i < step
+                    ? "text-zinc-400 hover:text-zinc-200 cursor-pointer"
+                    : "text-zinc-600"
+                }`}
+              >
+                <span className="hidden sm:inline">{s.label}</span>
+                <span className="sm:hidden">{s.shortLabel}</span>
+              </button>
+            ))}
           </div>
+          <div className="h-1 bg-zinc-800 rounded-full overflow-hidden">
+            <motion.div
+              className="h-full bg-gradient-to-r from-amber-500 to-amber-400 rounded-full"
+              initial={{ width: 0 }}
+              animate={{ width: `${progress}%` }}
+              transition={{ duration: 0.4, ease: "easeInOut" }}
+            />
+          </div>
+          <p className="text-[11px] text-zinc-500 mt-1.5">
+            Step {step + 1} of {STEPS.length}
+          </p>
         </div>
       </header>
 
-      <main className="container mx-auto px-4 py-8 max-w-3xl">
-        {step === 1 && (
-          <div className="animate-fade-in">
-            <div className="text-center mb-8">
-              <h1 className="font-display text-3xl font-bold text-foreground mb-2">What type of gig?</h1>
-              <p className="text-muted-foreground">Choose how you want to collaborate with creators</p>
-            </div>
-            <div className="grid md:grid-cols-2 gap-6">
-              <button onClick={() => setCampaignType(CampaignType.CONTEST)} className={`text-left p-6 rounded-2xl border-2 transition-all ${campaignType === CampaignType.CONTEST ? "border-primary bg-primary/5" : "border-border hover:border-primary/50 bg-card"}`}>
-                <div className="w-14 h-14 gradient-primary rounded-xl flex items-center justify-center mb-4">
-                  <Users className="w-7 h-7 text-primary-foreground" />
-                </div>
-                <h3 className="font-display text-xl font-semibold text-foreground mb-2">Challenge</h3>
-                <p className="text-muted-foreground text-sm mb-4">Run a competition where creators submit entries and compete for payouts based on performance.</p>
-                <ul className="text-sm text-muted-foreground space-y-1">
-                  <li>• Multiple winners possible</li>
-                  <li>• Scoring based on engagement</li>
-                  <li>• Great for brand awareness</li>
-                </ul>
-              </button>
-              <button onClick={() => setCampaignType(CampaignType.DEAL)} className={`text-left p-6 rounded-2xl border-2 transition-all ${campaignType === CampaignType.DEAL ? "border-primary bg-primary/5" : "border-border hover:border-primary/50 bg-card"}`}>
-                <div className="w-14 h-14 bg-secondary rounded-xl flex items-center justify-center mb-4">
-                  <DollarSign className="w-7 h-7 text-secondary-foreground" />
-                </div>
-                <h3 className="font-display text-xl font-semibold text-foreground mb-2">Collab</h3>
-                <p className="text-muted-foreground text-sm mb-4">Offer fixed-price collabs where you select specific creators to work with directly.</p>
-                <ul className="text-sm text-muted-foreground space-y-1">
-                  <li>• Select specific creators</li>
-                  <li>• Fixed payout per creator</li>
-                  <li>• More control over output</li>
-                </ul>
-              </button>
-            </div>
-            <div className="flex justify-end mt-8">
-              <Button variant="hero" size="lg" onClick={() => setStep(2)} disabled={!campaignType}>Continue<ChevronRight className="w-5 h-5" /></Button>
-            </div>
-          </div>
-        )}
+      {/* Content */}
+      <FormProvider {...methods}>
+        <main className="max-w-3xl mx-auto px-4 sm:px-6 py-6 sm:py-10 pb-32">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={step}
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -20 }}
+              transition={{ duration: 0.25 }}
+            >
+              {step === 0 && <WizardStepBasics />}
+              {step === 1 && <WizardStepAudience />}
+              {step === 2 && <WizardStepBrief />}
+              {step === 3 && <WizardStepReview />}
+            </motion.div>
+          </AnimatePresence>
+        </main>
+      </FormProvider>
 
-        {step === 2 && (
-          <div className="animate-fade-in">
-            <div className="text-center mb-8">
-              <h1 className="font-display text-3xl font-bold text-foreground mb-2">Gig Details</h1>
-              <p className="text-muted-foreground">Tell creators about your gig</p>
-            </div>
-            <form className="bg-card rounded-2xl border border-border p-6 space-y-6">
-              <div><Label htmlFor="title">Gig Title</Label><Input id="title" placeholder="e.g., Summer Fashion Challenge" className="mt-1.5" value={formData.title} onChange={(e) => setFormData({ ...formData, title: e.target.value })} /></div>
-              <div><Label>Category</Label><div className="grid grid-cols-3 sm:grid-cols-4 gap-2 mt-1.5">{categories.map((cat) => (<button key={cat} type="button" onClick={() => setFormData({ ...formData, category: cat })} className={`px-3 py-2 rounded-lg text-sm font-medium transition-all ${formData.category === cat ? "bg-primary text-primary-foreground" : "bg-muted text-muted-foreground hover:bg-muted/80"}`}>{cat}</button>))}</div></div>
-              <div><Label htmlFor="description">Short Description</Label><Textarea id="description" placeholder="A brief overview of your gig" className="mt-1.5" rows={3} value={formData.description} onChange={(e) => setFormData({ ...formData, description: e.target.value })} /></div>
-              <div><Label htmlFor="brief">Gig Brief</Label><div className="flex items-center gap-2 text-sm text-muted-foreground mb-1.5"><Info className="w-4 h-4" />Detailed instructions for creators</div><Textarea id="brief" placeholder="What should the content include?" className="mt-1" rows={5} value={formData.brief} onChange={(e) => setFormData({ ...formData, brief: e.target.value })} /></div>
-              <div><Label>Upload Assets</Label><div className="mt-1.5 border-2 border-dashed border-border rounded-xl p-8 text-center hover:border-primary/50 transition-colors cursor-pointer"><Upload className="w-8 h-8 text-muted-foreground mx-auto mb-2" /><p className="text-sm text-muted-foreground">Drag and drop files or click to upload</p></div></div>
-              <div className="flex justify-between pt-4"><Button variant="ghost" onClick={() => setStep(1)}>Back</Button><Button variant="hero" onClick={() => setStep(3)}>Continue<ChevronRight className="w-5 h-5" /></Button></div>
-            </form>
-          </div>
-        )}
+      {/* Bottom Nav */}
+      <div className="fixed bottom-0 left-0 right-0 z-40 bg-zinc-950/90 backdrop-blur-xl border-t border-zinc-800/50">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
+          <Button
+            variant="ghost"
+            onClick={prevStep}
+            disabled={step === 0}
+            className="text-zinc-400 hover:text-zinc-100"
+          >
+            <ArrowLeft className="w-4 h-4 mr-1.5" />
+            Back
+          </Button>
 
-        {step === 3 && (
-          <div className="animate-fade-in">
-            <div className="text-center mb-8"><h1 className="font-display text-3xl font-bold text-foreground mb-2">Payout & Timeline</h1><p className="text-muted-foreground">Set your payout and gig duration</p></div>
-            <form className="bg-card rounded-2xl border border-border p-6 space-y-6">
-              <div><Label htmlFor="budget">Total Payout (USD)</Label><div className="relative mt-1.5"><DollarSign className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" /><Input id="budget" type="number" placeholder="5000" className="pl-10" value={formData.budget} onChange={(e) => setFormData({ ...formData, budget: e.target.value })} /></div></div>
-              {campaignType === CampaignType.CONTEST && (<div><Label htmlFor="prizeBreakdown">Payout Tiers</Label><Textarea id="prizeBreakdown" placeholder="e.g., 1st: $2500, 2nd: $1500, 3rd: $1000" className="mt-1.5" rows={3} value={formData.prizeBreakdown} onChange={(e) => setFormData({ ...formData, prizeBreakdown: e.target.value })} /></div>)}
-              <div className="grid grid-cols-2 gap-4"><div><Label htmlFor="startDate">Start Date</Label><div className="relative mt-1.5"><Calendar className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" /><Input id="startDate" type="date" className="pl-10" value={formData.startDate} onChange={(e) => setFormData({ ...formData, startDate: e.target.value })} /></div></div><div><Label htmlFor="endDate">End Date</Label><div className="relative mt-1.5"><Calendar className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" /><Input id="endDate" type="date" className="pl-10" value={formData.endDate} onChange={(e) => setFormData({ ...formData, endDate: e.target.value })} /></div></div></div>
-              <div className="flex justify-between pt-4"><Button variant="ghost" onClick={() => setStep(2)}>Back</Button><Button variant="hero" onClick={() => setStep(4)}>Review Gig<ChevronRight className="w-5 h-5" /></Button></div>
-            </form>
+          <div className="flex items-center gap-2">
+            {step < 3 ? (
+              <Button
+                onClick={nextStep}
+                className="bg-amber-500 hover:bg-amber-400 text-zinc-950 font-semibold px-6"
+              >
+                Next
+                <ArrowRight className="w-4 h-4 ml-1.5" />
+              </Button>
+            ) : (
+              <Button
+                onClick={handlePublish}
+                disabled={createCampaign.isPending}
+                className="bg-amber-500 hover:bg-amber-400 text-zinc-950 font-semibold px-6"
+              >
+                {createCampaign.isPending ? (
+                  <>
+                    <Loader2 className="w-4 h-4 mr-1.5 animate-spin" />
+                    Publishing...
+                  </>
+                ) : (
+                  <>
+                    <Rocket className="w-4 h-4 mr-1.5" />
+                    Publish Campaign
+                  </>
+                )}
+              </Button>
+            )}
           </div>
-        )}
-
-        {step === 4 && (
-          <div className="animate-fade-in">
-            <div className="text-center mb-8"><h1 className="font-display text-3xl font-bold text-foreground mb-2">Review & Launch</h1><p className="text-muted-foreground">Make sure everything looks good</p></div>
-            <div className="bg-card rounded-2xl border border-border p-6 space-y-6">
-              <div className="flex items-center gap-4 pb-6 border-b border-border">
-                <div className="w-16 h-16 gradient-primary rounded-2xl flex items-center justify-center text-primary-foreground">{campaignType === CampaignType.CONTEST ? <Users className="w-8 h-8" /> : <DollarSign className="w-8 h-8" />}</div>
-                <div><span className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full font-medium">{campaignType === CampaignType.CONTEST ? "Challenge" : "Collab"}</span><h2 className="font-display text-2xl font-bold text-foreground mt-1">{formData.title || "Gig Title"}</h2></div>
-              </div>
-              <div className="grid grid-cols-2 gap-6"><div><p className="text-sm text-muted-foreground">Category</p><p className="font-medium text-foreground">{formData.category || "Not set"}</p></div><div><p className="text-sm text-muted-foreground">Payout</p><p className="font-medium text-foreground">${formData.budget || "0"}</p></div><div><p className="text-sm text-muted-foreground">Start Date</p><p className="font-medium text-foreground">{formData.startDate || "Not set"}</p></div><div><p className="text-sm text-muted-foreground">End Date</p><p className="font-medium text-foreground">{formData.endDate || "Not set"}</p></div></div>
-              <div><p className="text-sm text-muted-foreground mb-1">Description</p><p className="text-foreground">{formData.description || "No description provided"}</p></div>
-              <div className="flex justify-between pt-4 border-t border-border">
-                <Button variant="ghost" onClick={() => setStep(3)}>Back</Button>
-                <Button 
-                  variant="hero" 
-                  size="lg" 
-                  onClick={handleSubmit}
-                  disabled={createCampaign.isPending}
-                >
-                  {createCampaign.isPending ? (
-                    <>
-                      <Loader2 className="w-5 h-5 animate-spin" />
-                      Creating...
-                    </>
-                  ) : (
-                    <>
-                      <Zap className="w-5 h-5" />
-                      Launch Gig
-                    </>
-                  )}
-                </Button>
-              </div>
-            </div>
-          </div>
-        )}
-      </main>
+        </div>
+      </div>
     </div>
   );
 };
